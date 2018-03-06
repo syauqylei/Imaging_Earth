@@ -83,6 +83,7 @@ int main(){
 		free(CFD);
 	}
 	
+	print_mat(P,nt,nrows*ncols);
 	//free memories
 	free(Vel_Mod);
 	free_mat_mem(P,nt);
