@@ -5,6 +5,20 @@
 #include "libs/utils_arrayopr/arrayopr.h"
 #include "libs/source_function/source_function.h"
 
+void writing_file(char *filename, float **mat,int nt,int nrows,int ncols){
+	FILE *fp;
+	fp=fopen(filename,"w");
+	for(int i=0;i<nt;i++){
+		for(int j=0;j<nrows;j++){
+			for(int k=0;k<ncols;k++){
+				fprintf(fp,"%.3f \t",mat[i][j*ncols+k]);
+			}
+			fprintf(fp,"\n");
+		}
+	}
+	fclose(fp);
+}
+
 float *fin_diff(float *fd_coeff,float *fd_coeff_coor,int nrows,int ncols,int npoints,float *val){
 	float *fd_val=malloc(nrows*ncols*sizeof(float));
 	int aab;
@@ -26,10 +40,10 @@ float *fin_diff(float *fd_coeff,float *fd_coeff_coor,int nrows,int ncols,int npo
 	return fd_val;
 }
 
-int main(){
+void main(){
 	int ncols,nrows;
-	nrows=100;
-	ncols=100;
+	nrows=10;
+	ncols=10;
 	
 	float T=0.5;
 	float dt=0.001;//sampling
@@ -39,13 +53,18 @@ int main(){
 	float h=10.0;
 	float *Vel_Mod= malloc(nrows*ncols*sizeof(float));
 	float **P=alloc_mat(nt,nrows*ncols);
-	float *fd_coeff = malloc(sizeof(float)) ;
-	fd_coeff[0]=1;
-	fd_coeff[1]=1;
-	fd_coeff[2]=-4;
-	fd_coeff[3]=1;
-	fd_coeff[4]=1;
-	float fd_coeff_coor[5] = {-ncols,-1,0,1,ncols};
+	float *fd_coeff = malloc(5*sizeof(float)) ;
+	fd_coeff[0]=1.0;
+	fd_coeff[1]=1.0;
+	fd_coeff[2]=-4.0;
+	fd_coeff[3]=1.0;
+	fd_coeff[4]=1.0;
+	float *fd_coeff_coor = malloc(5*sizeof(float)) ;
+	fd_coeff[0]=-1.0*ncols;
+	fd_coeff[1]=-1.0;
+	fd_coeff[2]=0.0;
+	fd_coeff[3]=1.0;
+	fd_coeff[4]=1.0*ncols;
 	
 	//fin_diff(fd_coeff,fd_coeff_coor,nrows,ncols,5,Vel_Mod);
 	//Create Uniform Velocity model
@@ -82,9 +101,11 @@ int main(){
 		free(FD);
 		free(CFD);
 	}
-	
-	print_mat(P,nt,nrows*ncols);
+	writing_file("coba_tulis1.txt",P,nt,nrows,ncols);
+
 	//free memories
+	free(fd_coeff);
+	free(fd_coeff_coor);
 	free(Vel_Mod);
 	free_mat_mem(P,nt);
 }
