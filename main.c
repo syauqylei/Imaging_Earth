@@ -70,21 +70,22 @@ void main(){
 	//Create Uniform Velocity model
 	for (int i=0; i<nrows;i++){
 		for (int j=0;j<ncols;j++){
-			Vel_Mod[i*ncols+j] = 2000.00;
+			Vel_Mod[i*ncols+j] = 100.00;
 		}
 	}
 	
 	float src;
 	float fmax=50.0;
-	float t=0.0;
+	float t=0.01;
 	float *tp=&t;
-	int src_loc=(ncols)*nrows/2+ncols;
+	int src_loc=(ncols)*nrows/2+ncols/2;
 	float *srcptr;
 	float *A,*B,*C,*CC,*FD,*CFD;
 	for( int i=1;i<nt;i++){
+		printf("%d\n",i);
 		*tp=i*dt;
-		B=scalar_mult(2.0,P[0],nrows*ncols);
-		A=vek_subtraction(B,P[1],ncols*nrows);
+		B=scalar_mult(2.0,P[i],nrows*ncols);
+		A=vek_subtraction(B,P[i+1],ncols*nrows);
 		C=scalar_mult(dt/h,Vel_Mod,nrows*ncols);
 		CC=vek_elmwise_mult(C,C,nrows*ncols);
 		FD=fin_diff(fd_coeff,fd_coeff_coor,nrows,ncols,5,P[i]);
@@ -92,7 +93,6 @@ void main(){
 		P[i+1]=vek_addition(A,CFD,nrows*ncols);
 		srcptr=&P[i+1][src_loc];
 		*srcptr+=ricker_wavelet(fmax,t);
-		printf("Time iteration [%d] : %f , source val  : %f \n",i,t,P[i][src_loc]);
 		
 		free(A);
 		free(B);
@@ -101,6 +101,7 @@ void main(){
 		free(FD);
 		free(CFD);
 	}
+	printf(" Time domain iteration is done");
 	writing_file("coba_tulis1.txt",P,nt,nrows,ncols);
 
 	//free memories
