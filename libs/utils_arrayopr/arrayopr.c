@@ -22,7 +22,7 @@ float *vek_elmwise_mult(float *A, float *B,const int nelmts){
 	}
 	return C;
 }
-float *scalar_mult(float scalar_const,float *A,const int nelmts){
+float *scalar_mult(const float scalar_const,float *A,const int nelmts){
 	float *C=malloc(nelmts*sizeof(float));
 	for (int i=0;i<nelmts;i++){
 			C[i]=scalar_const*A[i];

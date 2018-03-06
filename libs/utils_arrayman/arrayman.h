@@ -1,3 +1,4 @@
+
 #ifndef ARRAYMAN_H
 #define ARRAYMAN_H
 int len(float *a);

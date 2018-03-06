@@ -2,7 +2,7 @@ LIBS = $(wildcard libs/*)
 INCLUDE_PATH = libs/
 
 fin_proj: libraries
-	gcc main.c $(wildcard libraries/* ) -I 	$(INCLUDE_PATH) -o fin_proj -lm
+	gcc main.c $(wildcard libraries/* ) -I$(INCLUDE_PATH) -o fin_proj -lm 
 
 libraries:
 	mkdir libraries/
