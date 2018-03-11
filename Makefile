@@ -16,4 +16,5 @@ libraries:
 clean:
 	rm -rf libraries/ ;\
 	rm fin_proj;
+	rm *.txt
 	

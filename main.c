@@ -4,19 +4,7 @@
 #include "libs/utils_arrayman/arrayman.h"
 #include "libs/utils_arrayopr/arrayopr.h"
 #include "libs/source_function/source_function.h"
-void wfile_mat(char *filename, float **mat,int nt,int nrows,int ncols){
-	FILE *fp;
-	fp=fopen(filename,"w");
-	for(int i=0;i<nt;i++){
-		for(int j=0;j<nrows;j++){
-			for(int k=0;k<ncols;k++){
-				fprintf(fp,"%.3f \t",mat[i][j*ncols+k]);
-			}
-			fprintf(fp,"\n");
-		}
-	}
-	fclose(fp);
-}
+
 float *fin_diff(float *fd_coeff,float *fd_coeff_coor,int nrows,int ncols,int npoints,float *val){
 	float *fd_val=malloc(nrows*ncols*sizeof(float));
 	int aab;
@@ -80,7 +68,6 @@ void main(){
 	int ncols,nrows;
 	nrows=100;
 	ncols=100;
-	
 	float T=0.2;
 	float dt=0.001;//sampling
 	
@@ -114,7 +101,8 @@ void main(){
 	
 	}
 	printf(" Time domain iteration is done\n");
-	wfile_mat("coba_tulis1.txt",P,nt,nrows,ncols);
+	//wfile_mat("coba_tulis1.txt",P,nt,nrows,ncols);
+	//wcsv_file("coba_tulis1.txt",P,nt,nrows,ncols);
 
 	//free memories
 	free(Vel_Mod);
