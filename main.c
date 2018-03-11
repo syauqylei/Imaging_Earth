@@ -103,7 +103,6 @@ void main(){
 	}
 	writing_file("coba_tulis1.txt",P,nt,nrows,ncols);
 
-	//free memories
 	free(fd_coeff);
 	free(fd_coeff_coor);
 	free(Vel_Mod);
