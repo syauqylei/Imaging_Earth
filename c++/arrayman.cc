@@ -134,7 +134,7 @@ float **alloc_mat(const int nrows, const int ncols){
 	return mat;
 }
 
-void free_mat_mem(float **mat,const int nrows){
+void free_mat_mem(float **mat){
 	delete [] mat[0];
 	delete [] mat;
 }
@@ -149,6 +149,6 @@ void print_mat(float **mat,const int nrows,const int ncols){
 
 void print_vek(float *mat,const int nelmts){
 	for (int i=0; i<nelmts;i++){
-		std::cout<<i<<mat[i]<<"\n";
+		std::cout<<"["<<i<<"] = "<<mat[i]<<"\n";
 	}
 }

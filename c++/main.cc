@@ -10,12 +10,11 @@ int main(){
 	int ncols,nrows;
 	nrows=100;
 	ncols=100;
-	float T=0.1;
-	float dt=0.001;//sampling
-	
+	float T=1;
+	float dt=0.002;//sampling
 	int nt=T/dt+1;
 	
-	float h=10.0;
+	float h=20.0;
 	float *Vel_Mod = new float [nrows*ncols];
 	float *f_src = new float [nrows*ncols];
 	float **P=alloc_mat(nt,nrows*ncols);
@@ -51,5 +50,5 @@ int main(){
 	//free memories
 	delete [] Vel_Mod;
 	delete [] f_src;
-	free_mat_mem(P,nt);
+	free_mat_mem(P);
 }
