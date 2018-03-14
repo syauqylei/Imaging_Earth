@@ -340,6 +340,7 @@ float *Wve_spas(float **P,float *vel,const float dtdivh,int time_step,const int 
 	delete [] A; delete [] B;
 	return sum;
 	}
+
 float **Wve_tim(float **P,float *Vel_mod,float h,float dt,float fmax, int src_loc,int nt, int nrows,int ncols ){
 	float t;
 	float f_src[nrows*ncols]={0};
@@ -347,11 +348,10 @@ float **Wve_tim(float **P,float *Vel_mod,float h,float dt,float fmax, int src_lo
 	for( int i=1;i<nt-1;i++){
 		t=i*dt;
 		// add source term
-		f_src[src_loc]=ricker_wavelet(fmax,t);
-		wve_prog=Wve_prog(P,Vel_Mod,dt/h,i,nrows,ncols);
+		//f_src[src_loc]=ricker_wavelet(fmax,t);
+		wve_prog=Wve_spas(P,Vel_mod,dt/h,i,nrows,ncols);
 		P[i+1]=vek_addition(wve_prog,f_src,nrows*ncols);
-		std::cout << " Time : " << *tp ;
-		std::cout << " \t Source Value : " <<  ricker_wavelet(fmax, *tp);
+		std::cout << " Time : " << t;
 		std::cout << " \t Wavefield Value : " << P[i+1][src_loc]<<std::endl;	
 	}
 	delete [] wve_prog;
