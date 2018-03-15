@@ -4,8 +4,8 @@
 #include "fin_diff_opr.h"
 #include <iostream>
 
-float *fin_diff(float *fd_coeff,float *fd_coeff_coor,int nrows,int ncols,int npoints,float *val){
-	float *fd_val=new float[nrows*ncols];
+double *fd_2d(double *fd_coeff,double *fd_coeff_coor,int nrows,int ncols,int npoints,double *val){
+	double *fd_val=new double[nrows*ncols];
 	int aab;
 	for (int i=0;i<nrows;i++){
 		for (int j =0; j<ncols;j++){
@@ -27,20 +27,20 @@ float *fin_diff(float *fd_coeff,float *fd_coeff_coor,int nrows,int ncols,int npo
 	return fd_val;
 }
 
-float *Wve_spas(float **P,float *vel,const float dtdivh,int time_step,const int nrows,const int ncols){
+double *Wve_spas(double **P,double *vel,const double dtdivh,int time_step,const int nrows,const int ncols){
 
 	hd2d hd;
-	hd = input((float)ncols);
+	hd = input((double)ncols);
 	
-	float *C,*CC,*FD,*CFD;
+	double *C,*CC,*FD,*CFD;
 	C=scalar_mult(dtdivh,vel,nrows*ncols);
 	CC=vek_elmwise_mult(C,C,nrows*ncols);
-	FD=fin_diff(hd.fd_cf,hd.fd_cf_coo,nrows,ncols,5,P[time_step]);
+	FD=fd_2d(hd.fd_cf,hd.fd_cf_coo,nrows,ncols,5,P[time_step]);
 	CFD=vek_elmwise_mult(CC,FD,nrows*ncols);
 	delete [] C;
 	delete [] CC;
 	delete [] FD;
-	float *A,*B,*sum;
+	double *A,*B,*sum;
 	
 	A=scalar_mult(2.0,P[time_step],nrows*ncols);
 	B=vek_subtraction(A,P[time_step-1],nrows*ncols);
@@ -49,10 +49,10 @@ float *Wve_spas(float **P,float *vel,const float dtdivh,int time_step,const int 
 	return sum;
 	}
 
-float **Wve_tim(float **P,float *Vel_mod,float h,float dt,float fmax, int src_loc,int nt, int nrows,int ncols ){
-	float t;
-	float f_src[nrows*ncols]={0};
-	float *wve_prog;
+double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int src_loc,int nt, int nrows,int ncols ){
+	double t;
+	double f_src[nrows*ncols]={0};
+	double *wve_prog;
 	for( int i=1;i<nt-1;i++){
 		t=i*dt;
 		// add source term
@@ -68,13 +68,4 @@ float **Wve_tim(float **P,float *Vel_mod,float h,float dt,float fmax, int src_lo
 	return P;
 }
 
-float *wve_prog(float **P,float dt,float h,int nx, int nx, int nz){
-	float *p;
-	int ntot=nrows*ncols;
-	int nstep=0;
-	for (int i=0;i<ntot;i++){
-		P[nstep+1][i]=2.0*P[nstep][i]-P[nstep-1][i]\
-		+nstep;
-	}
-	return p;
-	}
+	

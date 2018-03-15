@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-void w_dat(char *filename,float *Vel_mod, float **P,float dt,float h,int nt,int nx, int ny, int nz){
+void w_dat(char *filename,double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz){
 	std::string ext=".dat";
 	std::string fname;
 	std::ofstream myfile;
@@ -28,7 +28,7 @@ void w_dat(char *filename,float *Vel_mod, float **P,float dt,float h,int nt,int 
 	}
 }
 
-void w_csv(char *filename,float *Vel_mod, float **P,float dt,float h,int nt,int nx, int ny, int nz){
+void w_csv(char *filename,double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz){
 	std::string ext=".csv";
 	std::string fname;
 	std::ofstream myfile;
@@ -49,7 +49,7 @@ void w_csv(char *filename,float *Vel_mod, float **P,float dt,float h,int nt,int 
 	}
 }
 
-void w_vtk(char *filename,float *Vel_mod, float **P,float h,int nt,int nx, int ny, int nz){
+void w_vtk(char *filename,double *Vel_mod, double **P,double h,int nt,int nx, int ny, int nz){
 	std::string ext=".vtk";
 	std::string fname;
 	std::ofstream myfile;
@@ -63,7 +63,7 @@ void w_vtk(char *filename,float *Vel_mod, float **P,float h,int nt,int nx, int n
 		myfile << "ASCII"<<std::endl;
 		myfile << "DATASET STRUCTURED_GRID"<<std::endl;
 		myfile << "DIMENSION "<<std::to_string(nx)<<" "<<std::to_string(ny)<<" "<<std::to_string(nz)<<std::endl;
-		myfile << "POINTS "<<std::to_string(nx*nz*ny)<<" float"<<std::endl;
+		myfile << "POINTS "<<std::to_string(nx*nz*ny)<<" double"<<std::endl;
 		
 		for (int i=0; i<nz;i++){
 			for (int j=0; j<nx;j++){
@@ -73,7 +73,7 @@ void w_vtk(char *filename,float *Vel_mod, float **P,float h,int nt,int nx, int n
 			}
 		}
 		myfile <<std::endl;
-		myfile << "SCALARS Wavefield float 1"<<std::endl;
+		myfile << "SCALARS Wavefield double 1"<<std::endl;
 		myfile << "LOOKUP_TABLE default"<<std::endl;
 		
 		for (int i=0; i<nz;i++){
@@ -85,7 +85,7 @@ void w_vtk(char *filename,float *Vel_mod, float **P,float h,int nt,int nx, int n
 		}
 		/*
 		myfile <<std::endl;
-		myfile << "SCALARS Velocity_Model float 1"<<std::endl;
+		myfile << "SCALARS Velocity_Model double 1"<<std::endl;
 		myfile << "LOOKUP_TABLE default"<<std::endl;
 		for (int i=0; i<nz;i++){
 			for (int j=0; j<nx;j++){
@@ -98,7 +98,7 @@ void w_vtk(char *filename,float *Vel_mod, float **P,float h,int nt,int nx, int n
 	}
 }
 
-void w_file_mat(char *filename, float **P,int nt,int nrows, int ncols){
+void w_file_mat(char *filename, double **P,int nt,int nrows, int ncols){
 	std::ofstream myfile;
 	myfile.open (filename);
 	for (int i=0; i<nt;i++){
@@ -114,8 +114,8 @@ void w_file_mat(char *filename, float **P,int nt,int nrows, int ncols){
 	myfile.close();
 }
 
-float *mat_to_vek(float **arr,const int nrows, const int ncols){
-	float *vek=new float[nrows*ncols];
+double *mat_to_vek(double **arr,const int nrows, const int ncols){
+	double *vek=new double[nrows*ncols];
 	for (int i=0; i<nrows;i++){
 		for (int j=0; j<ncols;j++){
 			vek[i*ncols+j]=arr[i][j];
@@ -124,21 +124,21 @@ float *mat_to_vek(float **arr,const int nrows, const int ncols){
 	return vek;
 }
 
-float **alloc_mat(const int nrows, const int ncols){
-	float **mat=new float*[nrows];
+double **alloc_mat(const int nrows, const int ncols){
+	double **mat=new double*[nrows];
 	
-	mat[0]= new float[nrows*ncols];
+	mat[0]= new double[nrows*ncols];
 	for (int i=1; i<nrows;i++){
 		mat[i]=&mat[0][i*ncols];
 	}	
 	return mat;
 }
 
-void free_mat_mem(float **mat){
+void free_mat_mem(double **mat){
 	delete [] mat[0];
 	delete [] mat;
 }
-void print_mat(float **mat,const int nrows,const int ncols){
+void print_mat(double **mat,const int nrows,const int ncols){
 	for (int i=0; i<nrows;i++){
 		for (int j=0;j<ncols;j++){
 			std:: cout<<mat[i][j]<<"\t";
@@ -147,7 +147,7 @@ void print_mat(float **mat,const int nrows,const int ncols){
 	}
 }
 
-void print_vek(float *mat,const int nelmts){
+void print_vek(double *mat,const int nelmts){
 	for (int i=0; i<nelmts;i++){
 		std::cout<<"["<<i<<"] = "<<mat[i]<<"\n";
 	}

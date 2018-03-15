@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <string>
+#include "nadm.h"
 #include "arrayman.h"
 #include "arrayopr.h"
 #include "source_function.h"
@@ -10,14 +11,14 @@ int main(){
 	int ncols,nrows;
 	nrows=100;
 	ncols=100;
-	float T=1;
-	float dt=0.002;//sampling
+	double T=1;
+	double dt=0.002;//sampling
 	int nt=T/dt+1;
 	
-	float h=20.0;
-	float *Vel_Mod = new float [nrows*ncols];
-	float *f_src = new float [nrows*ncols];
-	float **P=alloc_mat(nt,nrows*ncols);
+	double h=20.0;
+	double *Vel_Mod = new double [nrows*ncols];
+	double *f_src = new double [nrows*ncols];
+	double **P=alloc_mat(nt,nrows*ncols);
 	
 	//Create Uniform Velocity model
 	for (int i=0; i<nrows;i++){
@@ -26,11 +27,11 @@ int main(){
 		}
 	}
 	
-	float src;
-	float fmax=50.0;
-	float t;
+	double src;
+	double fmax=50.0;
+	double t;
 	int src_loc=(ncols)*nrows/2+ncols/2;
-	/*float *wve_prog;
+	/*double *wve_prog;
 	for( int i=1;i<nt-1;i++){
 		*tp=i*dt;
 		// add source term

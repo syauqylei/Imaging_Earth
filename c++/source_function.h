@@ -1,4 +1,4 @@
 #ifndef SOURCE_FUNCTION_H
 #define SOURCE_FUNCTION_H
-float ricker_wavelet(float freq, float t);
+double ricker_wavelet(double freq, double t);
 #endif

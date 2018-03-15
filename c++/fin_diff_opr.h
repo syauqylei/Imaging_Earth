@@ -1,101 +1,101 @@
 #ifndef FIN_DIFF_OPR_H
 #define FIN_DIFF_OPR_H
 struct hd2d{
-	float fd_cf[5];
-	float fd_cf_coo[5];
+	double fd_cf[5];
+	double fd_cf_coo[5];
 	//d2x
-	float ad2x[3];
-	float bd2x[2];
-	float Cad2x[3];
-	float Cbd2x[2];
+	double ad2x[3];
+	double bd2x[2];
+	double Cad2x[3];
+	double Cbd2x[2];
 	//d2z
-	float ad2z[3];
-	float bd2z[2];
-	float Cad2z[3];
-	float Cbd2z[2];
+	double ad2z[3];
+	double bd2z[2];
+	double Cad2z[3];
+	double Cbd2z[2];
 	
 	//d3x
-	float ad3x[2];
-	float Cad3x[2];
-	float bd3x[3];
-	float Cbd3x[3];
+	double ad3x[2];
+	double Cad3x[2];
+	double bd3x[3];
+	double Cbd3x[3];
 	
 	//d3z
-	float ad3z[2];
-	float Cad3z[2];
-	float bd3z[3];
-	float Cbd3z[3];
+	double ad3z[2];
+	double Cad3z[2];
+	double bd3z[3];
+	double Cbd3z[3];
 	//d2xz
-	float ad2xz[8];
-	float bd2xz[7];
-	float *cd2xz = &ad2x[0];
-	float Cad2xz[8];
-	float Cbd2xz[7];
-	float *Ccd2xz=&Cad2x[0];
+	double ad2xz[8];
+	double bd2xz[7];
+	double *cd2xz = &ad2x[0];
+	double Cad2xz[8];
+	double Cbd2xz[7];
+	double *Ccd2xz=&Cad2x[0];
 	
 	//dx2z
-	float adx2z[8];
-	float bdx2z[7];
-	float *cdx2z=&ad2z[0];
-	float *Cadx2z=&Cad2xz[0];
-	float *Cbdx2z=&Cbd2xz[0];
-	float *Ccdx2z=&Cad2z[0];
+	double adx2z[8];
+	double bdx2z[7];
+	double *cdx2z=&ad2z[0];
+	double *Cadx2z=&Cad2xz[0];
+	double *Cbdx2z=&Cbd2xz[0];
+	double *Ccdx2z=&Cad2z[0];
 	
 	//d4x
-	float *ad4x=&ad2x[0];
-	float *Cad4x=&Cad2x[0];
-	float *bd4x=&bd2x[0];
-	float *Cbd4x=&Cbd2x[0];
+	double *ad4x=&ad2x[0];
+	double *Cad4x=&Cad2x[0];
+	double *bd4x=&bd2x[0];
+	double *Cbd4x=&Cbd2x[0];
 	
 	//d4z
-	float *ad4z=&ad2z[0];
-	float *Cad4z=&Cad2z[0];
-	float *bd4z=&bd2z[0];
-	float *Cbd4z=&Cbd2z[0];
+	double *ad4z=&ad2z[0];
+	double *Cad4z=&Cad2z[0];
+	double *bd4z=&bd2z[0];
+	double *Cbd4z=&Cbd2z[0];
 	
 	//d2x2z
-	float d2x2z[9];
-	float Cd2x2z[9];
+	double d2x2z[9];
+	double Cd2x2z[9];
 	
 	//d5x
-	float *ad5x=&ad3x[0];
-	float *Cad5x=&Cad3x[0];
-	float *bd5x=&bd3x[0];
-	float *Cbd5x=&Cbd3x[0];
+	double *ad5x=&ad3x[0];
+	double *Cad5x=&Cad3x[0];
+	double *bd5x=&bd3x[0];
+	double *Cbd5x=&Cbd3x[0];
 	
 	//d5z
-	float *ad5z=&ad3z[0];
-	float *Cad5z=&Cad3z[0];
-	float *bd5z=&bd3z[0];
-	float *Cbd5z=&Cbd3z[0];
+	double *ad5z=&ad3z[0];
+	double *Cad5z=&Cad3z[0];
+	double *bd5z=&bd3z[0];
+	double *Cbd5z=&Cbd3z[0];
 	
 	//d4xz
-	float *ad4xz=&ad2xz[0];
-	float bd4xz[7];
-	float *Cad4xz=&Cad2xz[0];
-	float Cbd4xz[7];
+	double *ad4xz=&ad2xz[0];
+	double bd4xz[7];
+	double *Cad4xz=&Cad2xz[0];
+	double Cbd4xz[7];
 	
 	//dx4z
-	float *adx4z=&adx2z[0];
-	float bdx4z[7];
-	float *Cadx4z=&Cadx2z[0];
-	float *Cbdx4z=&Cbd4xz[0];
+	double *adx4z=&adx2z[0];
+	double bdx4z[7];
+	double *Cadx4z=&Cadx2z[0];
+	double *Cbdx4z=&Cbd4xz[0];
 	
 	//d3x2z
-	float ad3x2z[6];
-	float *bd3x2z=&ad2z[0];
-	float Cad3x2z[6];
-	float *Cbd3x2z=&Cad2z[0];
+	double ad3x2z[6];
+	double *bd3x2z=&ad2z[0];
+	double Cad3x2z[6];
+	double *Cbd3x2z=&Cad2z[0];
 
 	//d2x3z
-	float ad2x3z[6];
-	float *bd2x3z=&ad2x[0];
-	float Cad2x3z[6];
-	float *Cbd2x3z=&Cad2x[0];
+	double ad2x3z[6];
+	double *bd2x3z=&ad2x[0];
+	double Cad2x3z[6];
+	double *Cbd2x3z=&Cad2x[0];
 	
 	};
 
-hd2d input(float nx){
+hd2d input(double nx){
 	hd2d HD;
 	
 	//Conventional Finite difference
