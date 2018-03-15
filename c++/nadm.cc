@@ -1,13 +1,12 @@
 #include "source_function.h"
 #include "arrayman.h"
-#include <cstdio>
 
 double *cdth2(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
-	double *Cdth2=new double[nx*nz*ny];
+	double *Cdth2=new double [nx*nz*ny];
 	for(int i=0; i<nz;i++){
 		for (int j=0; j<ny; j++){
 			for (int k=0; k<nx;k++){
-				Cdth2[i*nx+j]=Vel_Mod[k*nx*ny+i*nx+j]*Vel_Mod[k*nx*ny+i*nx+j]*dt*dt/h/h;
+				Cdth2[i*nx*ny+j*nx+k]=Vel_Mod[i*nx*ny+j*nx+k]*Vel_Mod[i*nx*ny+j*nx+k]*dt*dt/h/h;
 				}
 			}
 		}
@@ -19,8 +18,8 @@ double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
 	for(int i=0; i<nz;i++){
 		for (int j=0; j<ny; j++){
 			for (int k=0; k<nx;k++){
-				Cdth4[i*nx+j]=Vel_Mod[k*nx*ny+i*nx+j]*Vel_Mod[k*nx*ny+i*nx+j]\
-					*Vel_Mod[k*nx*ny+i*nx+j]*Vel_Mod[k*nx*ny+i*nx+j]*dt*dt*dt*dt/h/h/h/h;
+				Cdth4[i*nx*ny+j*nx+k]=Vel_Mod[i*nx*ny+j*nx+k]*Vel_Mod[i*nx*ny+j*nx+k]
+				*Vel_Mod[i*nx*ny+j*nx+k]*Vel_Mod[i*nx*ny+j*nx+k]*dt*dt*dt*dt/h/h/h/h;
 				}
 			}
 		}

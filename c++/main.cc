@@ -16,6 +16,7 @@ int main(){
 	int nt=T/dt+1;
 	
 	double h=20.0;
+	
 	double *Vel_Mod = new double [nrows*ncols];
 
 	//Create Uniform Velocity model
@@ -24,11 +25,10 @@ int main(){
 			Vel_Mod[i*ncols+j] = 2000.00;
 		}
 	}
-	
-	double src;
-	double fmax=50.0;
-	double t;
-	int src_loc=(ncols)*nrows/2+ncols/2;
-
+	//print_vek(Vel_Mod,nrows*ncols);
+	std::cout <<"die\n";
+	double *cfl2=cdth4(Vel_Mod,dt,h,ncols,nrows,1);
+	print_vek(cfl2,nrows*ncols);
 	delete [] Vel_Mod;
+	delete [] cfl2;
 }
