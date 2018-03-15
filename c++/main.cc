@@ -31,21 +31,6 @@ int main(){
 	double fmax=50.0;
 	double t;
 	int src_loc=(ncols)*nrows/2+ncols/2;
-	/*double *wve_prog;
-	for( int i=1;i<nt-1;i++){
-		*tp=i*dt;
-		// add source term
-		f_src[src_loc]=ricker_wavelet(fmax,t);
-		wve_prog=Wve_spas(P,Vel_Mod,dt/h,i,nrows,ncols);
-		P[i+1]=vek_addition(wve_prog,f_src,nrows*ncols);
-		
-		std::cout << " Time : " << *tp ;
-		std::cout << " \t Source Value : " <<  ricker_wavelet(fmax, *tp);
-		std::cout << " \t Wavefield Value : " << P[i+1][src_loc]<<std::endl;
-	
-	}
-	*/
-	Wve_tim(P,Vel_Mod,h,dt,fmax,src_loc,nt,nrows,ncols);
 	std::cout<< " Time domain iteration is done\n";
 	//w_dat("data/convFD",Vel_Mod,P,dt,h,nt,nrows,1,ncols);
 
