@@ -1,5 +1,4 @@
 #include <math.h>
-
 float ricker_wavelet(float freq, float t){
 	float f;
 	float pi=22.0/7.0;
