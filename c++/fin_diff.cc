@@ -4,21 +4,21 @@
 #include "fin_diff_opr.h"
 #include <iostream>
 
-double *fd_2d(double *fd_coeff,double *fd_coeff_coor,int nrows,int ncols,int npoints,double *val){
-	double *fd_val=new double[nrows*ncols];
+double *fd_2d(double *fd_coeff,double *fd_coeff_coor,int ny,int nx,int npoints,double *val){
+	double *fd_val=new double[ny*nx];
 	int aab;
-	for (int i=0;i<nrows;i++){
-		for (int j =0; j<ncols;j++){
+	for (int i=0;i<ny;i++){
+		for (int j =0; j<nx;j++){
 			for(int k=0;k<npoints;k++){
-				aab=i*ncols+j+fd_coeff_coor[k];
-				if(aab==i*ncols-1 && i*ncols+j == i*ncols ){continue;}
-				if(aab==(i+1)*ncols && i*ncols+j == (i+1)*ncols-1 ){continue;}
-				if(aab < 0 || aab > ncols*nrows-1 ){continue;}
-				if(aab==i*ncols && i*ncols+j == (i+1)*ncols-1 ){continue;}
-				if(aab==(i+2)*ncols && i*ncols+j == (i+1)*ncols-1 ){continue;}
-				if(aab==(i-1)*ncols-1 && i*ncols+j == i*ncols ){continue;}
-				if(aab==(i+1)*ncols-1 && i*ncols+j == i*ncols ){continue;}
-				fd_val[i*ncols+j]+=val[aab]*fd_coeff[k];
+				aab=i*nx+j+fd_coeff_coor[k];
+				if(aab==i*nx-1 && i*nx+j == i*nx ){continue;}
+				if(aab==(i+1)*nx && i*nx+j == (i+1)*nx-1 ){continue;}
+				if(aab < 0 || aab > nx*ny-1 ){continue;}
+				if(aab==i*nx && i*nx+j == (i+1)*nx-1 ){continue;}
+				if(aab==(i+2)*nx && i*nx+j == (i+1)*nx-1 ){continue;}
+				if(aab==(i-1)*nx-1 && i*nx+j == i*nx ){continue;}
+				if(aab==(i+1)*nx-1 && i*nx+j == i*nx ){continue;}
+				fd_val[i*nx+j]+=val[aab]*fd_coeff[k];
 
 			}
 		}	
@@ -27,38 +27,38 @@ double *fd_2d(double *fd_coeff,double *fd_coeff_coor,int nrows,int ncols,int npo
 	return fd_val;
 }
 
-double *Wve_spas(double **P,double *vel,const double dtdivh,int time_step,const int nrows,const int ncols){
+double *Wve_spas(double **P,double *vel,const double dtdivh,int time_step,const int ny,const int nx){
 
 	hd2d hd;
-	hd = input((double)ncols);
+	hd = input((double)nx);
 	
 	double *C,*CC,*FD,*CFD;
-	C=scalar_mult(dtdivh,vel,nrows*ncols);
-	CC=vek_elmwise_mult(C,C,nrows*ncols);
-	FD=fd_2d(hd.fd_cf,hd.fd_cf_coo,nrows,ncols,5,P[time_step]);
-	CFD=vek_elmwise_mult(CC,FD,nrows*ncols);
+	C=scalar_mult(dtdivh,vel,ny*nx);
+	CC=vek_elmwise_mult(C,C,ny*nx);
+	FD=fd_2d(hd.fd_cf,hd.fd_cf_coo,ny,nx,5,P[time_step]);
+	CFD=vek_elmwise_mult(CC,FD,ny*nx);
 	delete [] C;
 	delete [] CC;
 	delete [] FD;
 	double *A,*B,*sum;
 	
-	A=scalar_mult(2.0,P[time_step],nrows*ncols);
-	B=vek_subtraction(A,P[time_step-1],nrows*ncols);
-	sum=vek_addition(B,CFD,nrows*ncols);
+	A=scalar_mult(2.0,P[time_step],ny*nx);
+	B=vek_subtraction(A,P[time_step-1],ny*nx);
+	sum=vek_addition(B,CFD,ny*nx);
 	delete [] A; delete [] B;
 	return sum;
 	}
 
-double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int src_loc,int nt, int nrows,int ncols ){
+double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int src_loc,int nt, int ny,int nx ){
 	double t;
-	double f_src[nrows*ncols]={0};
+	double f_src[ny*nx]={0};
 	double *wve_prog;
 	for( int i=1;i<nt-1;i++){
 		t=i*dt;
 		// add source term
 		f_src[src_loc]=ricker_wavelet(fmax,t);
-		wve_prog=Wve_spas(P,Vel_mod,dt/h,i,nrows,ncols);
-		P[i+1]=vek_addition(wve_prog,f_src,nrows*ncols);
+		wve_prog=Wve_spas(P,Vel_mod,dt/h,i,ny,nx);
+		P[i+1]=vek_addition(wve_prog,f_src,ny*nx);
 		/*
 		std::cout << " Time : " << t;
 		std::cout << " \t Wavefield Value : " << P[i+1][src_loc];
@@ -67,5 +67,53 @@ double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int 
 	delete [] wve_prog;
 	return P;
 }
+
+double *cdth2(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
+	double *Cdth2=new double [nx*nz*ny];
+	for(int i=0; i<nz;i++){
+		for (int j=0; j<ny; j++){
+			for (int k=0; k<nx;k++){
+				Cdth2[i*nx*ny+j*nx+k]=Vel_Mod[i*nx*ny+j*nx+k]*Vel_Mod[i*nx*ny+j*nx+k]*dt*dt/h/h;
+				}
+			}
+		}
+	return Cdth2;
+	}
+
+double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
+	double *Cdth4=new double[nx*nz*ny];
+	for(int i=0; i<nz;i++){
+		for (int j=0; j<ny; j++){
+			for (int k=0; k<nx;k++){
+				Cdth4[i*nx*ny+j*nx+k]=Vel_Mod[i*nx*ny+j*nx+k]*Vel_Mod[i*nx*ny+j*nx+k]
+				*Vel_Mod[i*nx*ny+j*nx+k]*Vel_Mod[i*nx*ny+j*nx+k]*dt*dt*dt*dt/h/h/h/h;
+				}
+			}
+		}
+	return Cdth4;
+	}
+
+double *lap2d(double *P,double *Px,double *Py,double h,int nx,int ny){
+	hd2d HD;
+	double *lap2d= new double [nx*ny];
+	double *ad2x=fd_2d(HD.ad2x,HD.Cad2x,ny,nx,3,P);
+	double *bd2x=fd_2d(HD.bd2x,HD.Cbd2x,ny,nx,2,Px);
+	double *ad2y=fd_2d(HD.ad2y,HD.Cad2y,ny,nx,3,P);
+	double *bd2y=fd_2d(HD.bd2y,HD.Cbd2y,ny,nx,2,Px);
+	
+	for (int i=0; i<ny; i++){
+		for (int j=0; j<nx; j++){
+			lap2d[i*nx+j]=ad2x[i*nx+j]*2.0/h/h-bd2x[i*nx+j]/2.0/h+
+						  ad2y[i*nx+j]*2.0/h/h-bd2y[i*nx+j]/2.0/h;
+			}
+		}
+		
+	delete [] ad2x;
+	delete [] bd2x;
+	delete [] ad2y;
+	delete [] bd2y;
+	return lap2d;
+	}
+
 
 	
