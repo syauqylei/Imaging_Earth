@@ -26,7 +26,7 @@ int main(){
 	
 	double **U=Wve_conv_fd((nx*(ny/2)+ny/2),50.0,Vel_Mod,h,dt,nt,nx,ny);
 	
-	w_file_mat("coba_fd_opr_baru.txt",U,nt,ny,nx);
+	w_dat("data/coba_fd_opr_baru",Vel_Mod,U,dt,h,nt,ny,nx,1);
 	
 	//print_vek(Vel_Mod,ny*nx);
 	std::cout <<"die\n";

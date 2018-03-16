@@ -92,15 +92,16 @@ double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
 	return Cdth4;
 	}
 
-double fd_2d_opr(double *P,int i,double *coeff,double *coeff_coo,int nx, int ny,int nstencil){
+double fd_2d_opr(double *P,int j,double *coeff,double *coeff_coo,int nx, int ny,int nstencil){
 	double val=0;
 	for (int k=0; k < nstencil; k++){
-		if ( i+coeff_coo[k]< 0 || i+coeff_coo[k]< ny*nx-1){continue;}
-		if ( i%nx == 0){
+		if ( j+coeff_coo[k]< 0 || j+coeff_coo[k]> ny*nx-1){continue;}
+		if ( j%nx == 0){
 			if ( coeff_coo[k] == -1 || coeff_coo[k]==-nx-1){continue;}}
-		if ( i%nx == nx-1){
+		if ( j%nx == nx-1){
 			if ( coeff_coo[k] == 1 || coeff_coo[k]==+nx+1){continue;}}
-		val+=P[i+(int)coeff_coo[k]]*coeff[k];
+		val+=P[j+(int)coeff_coo[k]]*coeff[k];
+		//std:: cout<<j+(int)coeff_coo[k]<<" "<<coeff[k]<<" "<<j<<std::endl;
 		}
 	return val;
 	}
@@ -114,20 +115,15 @@ double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double d
 	
 	//Time-step loop
 	for (int i=1;i<nt-1;i++){
+		std:: cout<<i<<std::endl;
 		double t=i*dt;
 		//add source term
 		P[i+1][src_loc]+=ricker_wavelet(freq,t);
-		std::cout<<"time step "<<t<<"source "<<P[i+1][src_loc]<<std::endl;
 		for(int j=0;j<nx*ny;j++){
-			P[i+1][j]=2.0*P[i][j]-P[i-1][j]+
-			CDTH2[j]*((/* d2x */ 
-						2.0/h/h*fd_2d_opr(P[i],j,hd.ad2x,hd.Cad2x,nx,ny,3)+
-						1.0/2.0/h*fd_2d_opr(P[i],j,hd.bd2x,hd.Cbd2x,nx,ny,2))
-					+ (/* d2z */
-						2.0/h/h*fd_2d_opr(P[i],j,hd.ad2y,hd.Cad2y,nx,ny,3)+
-						1.0/2.0/h*fd_2d_opr(P[i],j,hd.bd2y,hd.Cbd2y,nx,ny,2)));
-			}
+			P[i+1][j]+=2.0*P[i][j]-P[i-1][j]+
+			CDTH2[j]*(/* laplace */ fd_2d_opr(P[i],j,hd.fd_cf,hd.fd_cf_coo,nx,ny,5));
 		}
+	}
 	delete [] CDTH2;
 	return P;
 	}
