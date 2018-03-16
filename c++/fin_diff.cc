@@ -108,7 +108,6 @@ double fd_2d_opr(double *P,int i,double *coeff,double *coeff_coo,int nx, int ny,
 double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double dt,int nt,int nx,int ny){
 	double **P=alloc_mat(nt,nx*ny);
 	double *CDTH2=cdth2(Vel_Mod,dt,h,nx,ny,1);
-	
 	hd2d hd;
 	
 	hd = input((double)nx);
@@ -117,7 +116,8 @@ double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double d
 	for (int i=1;i<nt-1;i++){
 		double t=i*dt;
 		//add source term
-		P[i+1][src_loc]=+ricker_wavelet(freq,t);
+		P[i+1][src_loc]+=ricker_wavelet(freq,t);
+		std::cout<<"time step "<<t<<"source "<<P[i+1][src_loc]<<std::endl;
 		for(int j=0;j<nx*ny;j++){
 			P[i+1][j]=2.0*P[i][j]-P[i-1][j]+
 			CDTH2[j]*((/* d2x */ 

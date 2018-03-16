@@ -5,6 +5,5 @@ double *Wve_spas(double **P,double *vel,const double dtdivh,int time_step,const 
 double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int src_loc,int nt, int nrows,int ncols );
 double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz);
 double *cdth2(double *Vel_Mod,double dt,double h,int nx,int ny, int nz);
-double *lap2d(double *P,double *Px,double *Py,double h,int nx,int ny);
-double *lap2d2(double *P,double *Px,double *Py,double h,int nx,int ny);
+double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double dt,int nt,int nx,int ny);
 #endif
