@@ -4,69 +4,6 @@
 #include "fin_diff_opr.h"
 #include <iostream>
 
-double *fd_2d(double *fd_coeff,double *fd_coeff_coor,int ny,int nx,int npoints,double *val){
-	double *fd_val=new double[ny*nx];
-	int aab;
-	for (int i=0;i<ny;i++){
-		for (int j =0; j<nx;j++){
-			for(int k=0;k<npoints;k++){
-				aab=i*nx+j+fd_coeff_coor[k];
-				if(aab==i*nx-1 && i*nx+j == i*nx ){continue;}
-				if(aab==(i+1)*nx && i*nx+j == (i+1)*nx-1 ){continue;}
-				if(aab < 0 || aab > nx*ny-1 ){continue;}
-				if(aab==i*nx && i*nx+j == (i+1)*nx-1 ){continue;}
-				if(aab==(i+2)*nx && i*nx+j == (i+1)*nx-1 ){continue;}
-				if(aab==(i-1)*nx-1 && i*nx+j == i*nx ){continue;}
-				if(aab==(i+1)*nx-1 && i*nx+j == i*nx ){continue;}
-				fd_val[i*nx+j]+=val[aab]*fd_coeff[k];
-
-			}
-		}	
-	}
-	return fd_val;
-}
-
-double *Wve_spas(double **P,double *vel,const double dtdivh,int time_step,const int ny,const int nx){
-
-	hd2d hd;
-	hd = input((double)nx);
-	
-	double *C,*CC,*FD,*CFD;
-	C=scalar_mult(dtdivh,vel,ny*nx);
-	CC=vek_elmwise_mult(C,C,ny*nx);
-	FD=fd_2d(hd.fd_cf,hd.fd_cf_coo,ny,nx,5,P[time_step]);
-	CFD=vek_elmwise_mult(CC,FD,ny*nx);
-	delete [] C;
-	delete [] CC;
-	delete [] FD;
-	double *A,*B,*sum;
-	
-	A=scalar_mult(2.0,P[time_step],ny*nx);
-	B=vek_subtraction(A,P[time_step-1],ny*nx);
-	sum=vek_addition(B,CFD,ny*nx);
-	delete [] A; delete [] B;
-	return sum;
-	}
-
-double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int src_loc,int nt, int ny,int nx ){
-	double t;
-	double f_src[ny*nx]={0};
-	double *wve_prog;
-	for( int i=1;i<nt-1;i++){
-		t=i*dt;
-		// add source term
-		f_src[src_loc]=ricker_wavelet(fmax,t);
-		wve_prog=Wve_spas(P,Vel_mod,dt/h,i,ny,nx);
-		P[i+1]=vek_addition(wve_prog,f_src,ny*nx);
-		/*
-		std::cout << " Time : " << t;
-		std::cout << " \t Wavefield Value : " << P[i+1][src_loc];
-		std::cout << " \t Source Value = "<<ricker_wavelet(fmax,t)<<std::endl;	*/
-	}
-	delete [] wve_prog;
-	return P;
-}
-
 double *cdth2(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
 	double *Cdth2=new double [nx*nz*ny];
 	for(int i=0; i<nz;i++){
@@ -92,7 +29,7 @@ double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
 	return Cdth4;
 	}
 
-double fd_2d_opr(double *P,int j,double *coeff,double *coeff_coo,int nx, int ny,int nstencil){
+double fd_2d(double *P,int j,double *coeff,double *coeff_coo,int nx, int ny,int nstencil){
 	double val=0;
 	for (int k=0; k < nstencil; k++){
 		if ( j+coeff_coo[k]< 0 || j+coeff_coo[k]> ny*nx-1){continue;}
@@ -101,7 +38,6 @@ double fd_2d_opr(double *P,int j,double *coeff,double *coeff_coo,int nx, int ny,
 		if ( j%nx == nx-1){
 			if ( coeff_coo[k] == 1 || coeff_coo[k]==+nx+1){continue;}}
 		val+=P[j+(int)coeff_coo[k]]*coeff[k];
-		//std:: cout<<j+(int)coeff_coo[k]<<" "<<coeff[k]<<" "<<j<<std::endl;
 		}
 	return val;
 	}
@@ -121,7 +57,7 @@ double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double d
 		P[i+1][src_loc]+=ricker_wavelet(freq,t);
 		for(int j=0;j<nx*ny;j++){
 			P[i+1][j]+=2.0*P[i][j]-P[i-1][j]+
-			CDTH2[j]*(/* laplace */ fd_2d_opr(P[i],j,hd.fd_cf,hd.fd_cf_coo,nx,ny,5));
+			CDTH2[j]*(/* laplace */ fd_2d(P[i],j,hd.fd_cf,hd.fd_cf_coo,nx,ny,5));
 		}
 	}
 	delete [] CDTH2;
