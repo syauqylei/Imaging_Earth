@@ -6,4 +6,5 @@ double **Wve_tim(double **P,double *Vel_mod,double h,double dt,double fmax, int 
 double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz);
 double *cdth2(double *Vel_Mod,double dt,double h,int nx,int ny, int nz);
 double *lap2d(double *P,double *Px,double *Py,double h,int nx,int ny);
+double *lap2d2(double *P,double *Px,double *Py,double h,int nx,int ny);
 #endif

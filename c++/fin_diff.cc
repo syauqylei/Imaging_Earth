@@ -23,7 +23,6 @@ double *fd_2d(double *fd_coeff,double *fd_coeff_coor,int ny,int nx,int npoints,d
 			}
 		}	
 	}
-
 	return fd_val;
 }
 
@@ -93,13 +92,52 @@ double *cdth4(double *Vel_Mod,double dt,double h,int nx,int ny, int nz){
 	return Cdth4;
 	}
 
+double fd_2d_opr(double *P,int i,double *coeff,double *coeff_coo,int ny, int nx,int nstencil){
+	double val=0;
+	for (int k=0; k < nstencil; k++){
+		if ( i+coeff_coo[k]< 0 || i+coeff_coo[k]< ny*nx-1){continue;}
+		if ( i%nx == 0){
+			if ( coeff_coo[k] == -1 || coeff_coo[k]==-nx-1){continue;}}
+		if ( i%nx == nx-1){
+			if ( coeff_coo[k] == 1 || coeff_coo[k]==+nx+1){continue;}}
+		val+=P[i+(int)coeff_coo[k]]*coeff[k];
+		}
+	return val;
+	}
+
+double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double dt,int nt,int nx,int ny){
+	double **P=alloc_mat(nt,nx*ny);
+	double *CDTH2=cdth2(Vel_Mod,dt,h,nx,ny,1);
+	
+	hd2d hd;
+	
+	hd = input((double)nx);
+	
+	//Time-step loop
+	for (int i=1;i<nt-1;i++){
+		double t=i*dt;
+		//add source term
+		P[i+1][src_loc]=+ricker_wavelet(freq,t);
+		for(int j=0;j<nx*ny;j++){
+			P[i+1][j]=2.0*P[i][j]-P[i-1][j]+
+			CDTH2[j]*((/* d2x */ )
+					+ (/* d2z */ ));
+			}
+		}
+	free_mat_mem(P);
+	delete [] CDTH2;
+	return P;
+	}
+
+
+/*
 double *lap2d(double *P,double *Px,double *Py,double h,int nx,int ny){
 	hd2d HD;
 	double *lap2d= new double [nx*ny];
 	double *ad2x=fd_2d(HD.ad2x,HD.Cad2x,ny,nx,3,P);
 	double *bd2x=fd_2d(HD.bd2x,HD.Cbd2x,ny,nx,2,Px);
 	double *ad2y=fd_2d(HD.ad2y,HD.Cad2y,ny,nx,3,P);
-	double *bd2y=fd_2d(HD.bd2y,HD.Cbd2y,ny,nx,2,Px);
+	double *bd2y=fd_2d(HD.bd2y,HD.Cbd2y,ny,nx,2,Py);
 	
 	for (int i=0; i<ny; i++){
 		for (int j=0; j<nx; j++){
@@ -115,5 +153,28 @@ double *lap2d(double *P,double *Px,double *Py,double h,int nx,int ny){
 	return lap2d;
 	}
 
-
+double *lap2d2(double *P,double *Px,double *Py,double h,int nx,int ny){
+	hd2d HD;
+	double *lap2d= new double [nx*ny];
+	double *ad4x=fd_2d(HD.ad2x,HD.Cad2x,ny,nx,3,P);
+	double *bd4x=fd_2d(HD.bd2x,HD.Cbd2x,ny,nx,2,Px);
+	double *ad4y=fd_2d(HD.ad2y,HD.Cad2y,ny,nx,3,P);
+	double *bd4y=fd_2d(HD.bd2y,HD.Cbd2y,ny,nx,2,Py);
+	double *d2x2y=fd_2d(HD.d2x2y,HD.Cd2x2y,ny,nx,3,P);
 	
+	for (int i=0; i<ny; i++){
+		for (int j=0; j<nx; j++){
+			lap2d[i*nx+j]=ad4x[i*nx+j]*-12.0/h/h/h/h-bd4x[i*nx+j]*6.0/h/h/h+
+						  ad4y[i*nx+j]*-12.0/h/h/h/h-bd4y[i*nx+j]*6.0/h/h/h+
+						  d2x2y[i*nx+j]/h/h/h/h;
+			}
+		}
+		
+	delete [] ad4x;
+	delete [] bd4x;
+	delete [] ad4y;
+	delete [] bd4y;
+	delete [] d2x2y;
+	return lap2d;
+	}
+*/
