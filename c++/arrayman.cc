@@ -8,9 +8,11 @@ void w_dat(char *filename, double *Vel_mod, double **P,double dt,double h,int nt
 	std::string ext=".dat";
 	std::string fname;
 	std::ofstream myfile;
-	int tprint=nt/(nt/10);
+	int tprint=(nt/10);
 	std::cout << "Start to write File .....\n";
 	for (int t=0; t<nt;t++){
+		if (t%tprint==0){
+		std::cout << "Writing File ..... "<<(float)t/nt*100 <<"%\n";}
 		std::stringstream ss;
 		ss <<std::setfill('0')<< std::setw(3) <<t;
 		fname=filename+ss.str()+ ext;

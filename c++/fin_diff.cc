@@ -48,7 +48,7 @@ double fd_2d(double *P,int j,double *coeff,double *coeff_coo,int nx, int ny,int 
 	return val;
 	}
 
-double **Wve_conv_fd(int src_loc, double freq,double *Vel_Mod,double h, double dt,int nt,int nx,int ny){
+double **Wve_stfd(int src_loc, double freq,double *Vel_Mod,double h, double dt,int nt,int nx,int ny){
 	double **P=alloc_mat(nt,nx*ny);
 	double *CDTH2=cdth2(Vel_Mod,dt,h,nx,ny,1);
 	hd2d hd;
@@ -76,17 +76,19 @@ double **Wve_nadm(int src_loc, double freq,double *Vel_Mod,double h, double dt,i
 	double **Py=alloc_mat(nt,nx*ny);
 	double *CDTH2=cdth2(Vel_Mod,dt,h,nx,ny,1);
 	double *CDTH4=cdth4(Vel_Mod,dt,h,nx,ny,1);
-	float tprint=nt/10;
+	int tprint=nt/10;
 	hd2d hd;
 	
 	hd = input((double)nx);
 	
 	//Time-step loop
-	for (int i=1;i<nt-1;i++){
-		std:: cout<<"Computing Wavefield ....."<<std::setprecision(3)<<(float)i/(nt-2)*100<<"%"<<std::endl;
+	for (int i=1;i<nt-1;i++){if(i%tprint==0){
+		std:: cout<<"Computing Wavefield ....."<<std::setprecision(3)<<(float)i/(nt-2)*100<<"%"<<std::endl;}
 		double t=i*dt;
 		//add source term
-		P[i+1][src_loc]+=ricker_wavelet(freq,t);
+		P[i+1][src_loc]+=ricker_wavelet_2(freq,t);
+		for(int j=0;j<nx*ny;j++){Px[i][j]=fd_2d(P[i],j,hd.bd2x,hd.Cbd2x,nx,ny,2);}
+		for(int j=0;j<nx*ny;j++){Py[i][j]=fd_2d(P[i],j,hd.bd2y,hd.Cbd2y,nx,ny,2);}
 		for(int j=0;j<nx*ny;j++){
 			/*P Wavefield */
 			P[i+1][j]+=2.0*P[i][j]-P[i-1][j]+
@@ -112,8 +114,9 @@ double **Wve_nadm(int src_loc, double freq,double *Vel_Mod,double h, double dt,i
 			
 			/* 2*d2x2y */2.0*(
 			fd_2d(P[i],j,hd.d2x2y,hd.Cd2x2y,nx,ny,9)/h/h/h/h)
-			);
+			);}
 			
+		for(int j=0;j<nx*ny;j++){
 			/* Px Wavefield */
 			Px[i+1][j]+=2.0*Px[i][j]-Px[i-1][j]+
 			CDTH2[j]*
@@ -139,8 +142,10 @@ double **Wve_nadm(int src_loc, double freq,double *Vel_Mod,double h, double dt,i
 			/* 2*d3x2y */2.0*(
 			fd_2d(P[i],j,hd.ad3x2y,hd.Cad3x2y,nx,ny,6)*3.0/h/h/h/h/h+
 			fd_2d(Px[i],j,hd.bd3x2y,hd.Cbd3x2y,nx,ny,3)*-6.0/h/h/h/h)
-			);
+			);}
 			
+			
+		for(int j=0;j<nx*ny;j++){
 			/* Py Wavefield */
 			Py[i+1][j]+=2.0*Py[i][j]-Py[i-1][j]+
 			CDTH2[j]*

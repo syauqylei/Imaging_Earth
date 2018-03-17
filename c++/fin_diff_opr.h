@@ -118,6 +118,7 @@ hd2d input(double nx){
 	HD.Cad2x[0]=-1;
 	HD.Cad2x[1]=0;
 	HD.Cad2x[2]=1;
+	
 	HD.bd2x[0]=-1;
 	HD.bd2x[1]=1;
 	HD.Cbd2x[0]=-1;
