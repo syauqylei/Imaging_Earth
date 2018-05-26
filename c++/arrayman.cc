@@ -151,8 +151,15 @@ void print_mat(double **mat,const int nrows,const int ncols){
 	}
 }
 
-void print_vek(double *mat,const int nelmts){
+void print_vek(double *mat, const int nelmts){
 	for (int i=0; i<nelmts;i++){
-		std::cout<<"["<<i<<"] = "<<mat[i]<<"\n";
+		std::cout<<"["<<i<<"] = "<<std::fixed<<mat[i]<<"\n";
+	}
+}
+
+
+void print_vek_int(int *mat, const int nelmts){
+	for (int i=0; i<nelmts;i++){
+		std::cout<<"["<<i<<"] = "<<std::fixed<<mat[i]<<"\n";
 	}
 }

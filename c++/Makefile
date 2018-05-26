@@ -1,4 +1,4 @@
-all: main.o arrayman.o arrayopr.o source_function.o fin_diff.o
+all: main.o arrayman.o arrayopr.o source_function.o fin_diff.o fin_diff_opr.o
 	g++ -std=c++11 *.o -o fin_proj
 
 source_function.o : source_function.cc
@@ -12,6 +12,9 @@ arrayopr.o : arrayopr.cc
 
 fin_diff.o : fin_diff.cc
 	g++ -std=c++11 -c fin_diff.cc
+
+fin_diff_opr.o : fin_diff_opr.cc
+	g++ -std=c++11 -c fin_diff_opr.cc
 
 main.o : main.cc
 	g++ -std=c++11 -c main.cc
