@@ -1,4 +1,4 @@
-#include <math.h>
+#include <cmath>
 double ricker_wavelet_1(double freq, double t){
 	double f;
 	double pi=22.0/7.0;

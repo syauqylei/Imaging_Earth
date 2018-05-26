@@ -1,35 +1,34 @@
 #include <iostream>
-#include <string>
+#include <iomanip>
+#include <cmath>
+#include "wavesim.h"
 #include "arrayman.h"
-#include "arrayopr.h"
-#include "fin_diff.h"
-int main(){
-	int nx,ny;
-	ny=50;
-	nx=50;
-	double T=0.5;
-	double dt=0.002;//sampling
-	int nt=T/dt+1;	
-	double h=20.0;
-	
-	double *Vel_Mod = new double [ny*nx];
+#include "coeff.h"
+#include "source_function.h"
+#include "hider.h"
 
-	//Create Uniform Velocity model
-	for (int i=0; i<ny;i++){
+int main(){
+	int nx=100;
+	int ny=100;
+	double *vel = new double [nx*ny];
+	for (int i=0;i<ny;i++){
 		for (int j=0;j<nx;j++){
-			Vel_Mod[i*nx+j] = 2000.00;
+			
+			vel[i*nx+j]=2000.0;
+			}
 		}
+	
+	double t=0;
+	double T=1;
+	double h=10.00;
+	double f=50.0;
+	double dt=0.001;
+	int nt=int(T/dt);
+	double **u;
+	double **v;
+	u=wvenacd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
+	v=wvefd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
+	w_dat("data/nacd_sample",vel,u,dt,h,nt,nx,ny,1);
+	w_dat("data/fd_sample",vel,v,dt,h,nt,nx,ny,1);
 	}
-	
-	std::cout <<"die\n";
-	double **U=Wve_nadm(nx*ny/2+nx/2,30.0,Vel_Mod,h,dt,nt,nx,ny);
-	double **P=Wve_stfd(nx*ny/2+nx/2,30.0,Vel_Mod,h,dt,nt,nx,ny);
-	w_dat("data/exp4_stdfd",Vel_Mod,P,dt,h,nt,ny,nx,1);
-	w_dat("data/exp12_nadm",Vel_Mod,U,dt,h,nt,ny,nx,1);
-	
-	//print_vek(Vel_Mod,ny*nx);
-	free_mat_mem(U);
-	//free_mat_mem(P);
-	
-	delete [] Vel_Mod;
-}
+
