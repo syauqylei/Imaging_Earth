@@ -1,4 +1,8 @@
 #include <cmath>
+
+double cfl(double c,double dt, double h){
+	double cf=c*dt/h;
+	return cf}
 double cf1( double c, double dt, double h){
 	double cf=pow(c*dt/h,4)/6.0;
 	return cf;

@@ -1,5 +1,8 @@
-all: main.o coeff.o arrayman.o wavesim.o source_function.o hider.o
+all: main.o coeff.o arrayman.o wavesim.o source_function.o hider.o abcon.o
 	g++ -std=c++11 *.o -o wve_nacd
+
+abcon.o : abcon.cc
+	g++ -std=c++11 -c abcon.cc
 
 coeff.o : coeff.cc
 	g++ -std=c++11 -c coeff.cc
