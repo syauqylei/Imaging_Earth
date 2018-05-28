@@ -1,6 +1,4 @@
 #include <iostream>
-#include <iomanip>
-#include <cmath>
 #include "wavesim.h"
 #include "arrayman.h"
 
@@ -12,7 +10,7 @@ int main(){
 	for (int i=0;i<ny;i++){
 		for (int j=0;j<nx;j++){
 			
-			vel[i*nx+j]=2000.0;
+			vel[i*nx+j]=4000.0;
 			}
 		}
 	
@@ -22,5 +20,10 @@ int main(){
 	double f=50.0;
 	double dt=0.001;
 	int nt=int(T/dt);
+	double **U;
+	U=wvenacd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
+	w_dat("data/nacd_abc_3sample",vel,U,dt,h,nt,nx,ny,1);
+	free_mat_mem(U);
+	delete [] vel;
 	}
 
