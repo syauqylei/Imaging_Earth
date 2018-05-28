@@ -1,7 +1,8 @@
+#include <iostream>
 #include <cmath>
 #include "coeff.h"
 
-const double b = 0.5;
+const double b = 0;
 
 double qx(double bta,double cfv){
 	double rslt=(b*(bta+cfv)-cfv)/((bta+cfv)*(1-b));
@@ -13,40 +14,63 @@ double qt(double bta,double cfv){
 	return rslt;
 	}
 
-double hiabc(double *U, double cfv,int k,int i,int polar){
-	double beta[4]={0.99,0.79,0.52,0.31};
-	double abc_eq[4][4];
+double hiabc(double **U,int t,int s, int sdifopr, double cfl,double *beta,int ndeg){
+	
+	double abc_eq[ndeg][4];
 	double qxt=b/(b-1);
 	
-	for (int i=0;i<4;i++){
+	for (int i=0;i<ndeg;i++){
 			abc_eq[i][0]=1;
-			abc_eq[i][1]=qx(beta[i],cfv);
-			abc_eq[i][2]=qt(beta[i],cfv);
+			abc_eq[i][1]=qx(beta[i],cfl);
+			abc_eq[i][2]=qt(beta[i],cfl);
 			abc_eq[i][3]=qxt;
 		}
-	double abcd[256];
-	abcd[0]=abc[0][0];
-	abcd[1]=abc[0][1];
-	abcd[2]=abc[0][2];
-	abcd[3]=abc[0][3];
 	
-	int iter[3]={4,16,64};
-	for (int i=0;i<3;i++){
+	int nelement=int(pow(4,ndeg));
+	double cff[nelement];
+	cff[0]=abc_eq[0][0];
+	cff[1]=abc_eq[0][1];
+	cff[2]=abc_eq[0][2];
+	cff[3]=abc_eq[0][3];
+	
+	int topr[nelement];
+	topr[0]=0;
+	topr[1]=0;
+	topr[2]=-1;
+	topr[3]=-1;
+	
+	int sopr[nelement];
+	sopr[0]=0;
+	sopr[1]=sdifopr;
+	sopr[2]=0;
+	sopr[3]=sdifopr;
+	
+	int iter[ndeg-1];
+	for (int i=0;i<ndeg-1;i++){
+		iter[i]=int(pow(4,i+1));
+		}
+	
+	for (int i=0;i<ndeg-1;i++){
 		for (int j=0; j<3;j++){
 			for (int k=0; k<iter[i];k++){
-				abcd[iter[i]+]=abcd[k]*abc_eq[i+1][j];
+				sopr[iter[i]+j*iter[i]+k]=sopr[k]+sopr[j+1];
+				cff[iter[i]+j*iter[i]+k]=cff[k]*abc_eq[i+1][j+1];
+				topr[iter[i]+j*iter[i]+k]=topr[k]+topr[j+1];
 				}
 			}
 		}
 	
-	int topr[4]={0,0,-1,-1};
+		
+	cff[0]=0;
 	
-	int spasopr[4];
-	spasopr[0]=0;
-	spasopr[1]=polar;
-	spasopr[2]=0;
-	spasopr[3]=polar;
-	
-	double u;
+	double u=0;
+	int tdf;
+	int sdf;
+	for (int i=0; i<nelement;i++){
+		sdf=s+sopr[i];
+		if(t+topr[i]<0){tdf=0;}
+		else {tdf=t+topr[i];}
+		u+=-U[tdf][sdf]*cff[i];
+		}
 	return u;
 	}

@@ -1,17 +1,13 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#include <vector>
 #include "wavesim.h"
 #include "arrayman.h"
-#include "coeff.h"
-#include "source_function.h"
-#include "hider.h"
-#include "abcon.h"
 
 int main(){
 	int nx=100;
 	int ny=100;
+	
 	double *vel = new double [nx*ny];
 	for (int i=0;i<ny;i++){
 		for (int j=0;j<nx;j++){
@@ -26,12 +22,5 @@ int main(){
 	double f=50.0;
 	double dt=0.001;
 	int nt=int(T/dt);
-	double **u;/*
-	double **v;
-	u=wvenacd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
-	v=wvefd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
-	w_dat("data/nacd_sample",vel,u,dt,h,nt,nx,ny,1);
-	w_dat("data/fd_sample",vel,v,dt,h,nt,nx,ny,1);*/
-	hiabc(u[0],0.5,1,1,1);
 	}
 

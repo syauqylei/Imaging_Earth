@@ -1,6 +1,4 @@
 #ifndef ABC
 #define ABC
-double qx(double bta,double cfv);
-double qt(double bta,double cfv);
-double hiabc(double *U, double cfv,int k,int i,int polar);
+double hiabc(double **U,int t,int s, int sdifopr, double cfl,double *beta,int ndeg);
 #endif
