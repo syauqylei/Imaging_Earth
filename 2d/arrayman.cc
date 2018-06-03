@@ -14,7 +14,7 @@ void w_dat(const std::string& filename, double *Vel_mod, double **P,double dt,do
 		if (t%tprint==0){
 		std::cout << "Writing File ..... "<<(float)t/nt*100 <<"%\n";}
 		std::stringstream ss;
-		ss <<std::setfill('0')<< std::setw(3) <<t;
+		ss <<std::setfill('0')<< std::setw(5) <<t;
 		fname=filename+ss.str()+ ext;
 		myfile.open(fname);
 		
@@ -32,29 +32,8 @@ void w_dat(const std::string& filename, double *Vel_mod, double **P,double dt,do
 	}
 }
 
-void w_csv(char *filename,double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz){
-	std::string ext=".csv";
-	std::string fname;
-	std::ofstream myfile;
-	for (int t=0; t<nt;t++){
-		std::stringstream ss;
-		ss <<std::setfill('0')<< std::setw(3) <<t;
-		fname=filename+ss.str()+ ext;
-		myfile.open(fname);
-		myfile << "t,x,y,z,value"<<std::endl;		
-		for (int i=0; i<nz;i++){
-			for (int j=0; j<nx;j++){
-				for (int k=0;k<ny;k++){
-					myfile << std::fixed<< std::setprecision(5)<<t*dt<<","<<j*h+h/2.0<<","<< k*h+h/2.0<<","<< i*h+h/2.0<<","<<P[t][k*nx*nz+i*nx+j]<<"\n";
-				}
-			}
-		}
-	myfile.close();
-	}
-}
-
 void w_vtk(char *filename,double *Vel_mod, double **P,double h,int nt,int nx, int ny, int nz){
-	std::string ext=".vtk";
+	std::string ext=".vts";
 	std::string fname;
 	std::ofstream myfile;
 	for (int t=0; t<nt;t++){

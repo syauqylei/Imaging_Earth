@@ -18,9 +18,9 @@ int main(){
 	read_fwdset("fwdset.txt",sourceloc,ns,dt,T,fm);
 	srcloc=&sourceloc[0];
 	int nt=int(T/dt+1);
-	U=wvenacd(velocities,ny,nz,srcloc[0],fm,h,dt,T);
-	write_wve("/scratch/syauqy/sample1",U,1,nx,ny,nt,dt,h);
-	w_dat("/scratch/syauqy/data/sample1", velocities,U,dt,h,nt,ny,nz,1);
+	U=wvenacd(velocities,ny,nz,srcloc[10],fm,h,dt,T);
+	write_wve("/scratch/syauqy/sample",U,1,ny,nz,nt,dt,h);
+	w_dat("/scratch/syauqy/data/sample", velocities,U,dt,h,nt,ny,nz,1);
 	free_mat_mem(U);
 	}
 

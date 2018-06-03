@@ -1,5 +1,5 @@
 #!/bin/bash
-for number in {0..675..20}
+for number in {676..1352..20}
 do
 echo "$number" >> fwdset.txt
 done

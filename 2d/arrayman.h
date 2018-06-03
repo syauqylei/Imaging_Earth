@@ -9,7 +9,6 @@ void print_vek(double *mat,const int nelmts);
 void print_vek_int(int *mat, const int nelmts);
 void w_file_mat(char *filename, double **P,int nt,int nrows, int ncols);
 void w_vtk(char *filename,double *Vel_mod, double **P,double h,int nt,int nx, int ny, int nz);
-void w_csv(char *filename,double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz);
 void w_dat(const std::string& filename,double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz);
 #endif
 
