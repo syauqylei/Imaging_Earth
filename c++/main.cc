@@ -1,54 +1,29 @@
 #include <iostream>
-#include <math.h>
-#include <string>
+#include "wavesim.h"
 #include "arrayman.h"
-#include "arrayopr.h"
-#include "source_function.h"
-#include "fin_diff.h"
 
 int main(){
-	int ncols,nrows;
-	nrows=100;
-	ncols=100;
-	float T=1;
-	float dt=0.002;//sampling
-	int nt=T/dt+1;
+	int nx=100;
+	int ny=100;
 	
-	float h=20.0;
-	float *Vel_Mod = new float [nrows*ncols];
-	float *f_src = new float [nrows*ncols];
-	float **P=alloc_mat(nt,nrows*ncols);
-	
-	//Create Uniform Velocity model
-	for (int i=0; i<nrows;i++){
-		for (int j=0;j<ncols;j++){
-			Vel_Mod[i*ncols+j] = 2000.00;
+	double *vel = new double [nx*ny];
+	for (int i=0;i<ny;i++){
+		for (int j=0;j<nx;j++){
+			
+			vel[i*nx+j]=4000.0;
+			}
 		}
-	}
 	
-	float src;
-	float fmax=50.0;
-	float t;
-	float *tp=&t;
-	int src_loc=(ncols)*nrows/2+ncols/2;
-	float *wve_prog;
-	for( int i=1;i<nt-1;i++){
-		*tp=i*dt;
-		// add source term
-		f_src[src_loc]=ricker_wavelet(fmax,t);
-		wve_prog=Wve_prog(P,Vel_Mod,dt/h,i,nrows,ncols);
-		P[i+1]=vek_addition(wve_prog,f_src,nrows*ncols);
-		
-		std::cout << " Time : " << *tp ;
-		std::cout << " \t Source Value : " <<  ricker_wavelet(fmax, *tp);
-		std::cout << " \t Wavefield Value : " << P[i+1][src_loc]<<std::endl;
-	
+	double t=0;
+	double T=1;
+	double h=10.00;
+	double f=50.0;
+	double dt=0.001;
+	int nt=int(T/dt);
+	double **U;
+	U=wvenacd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
+	w_dat("data/nacd_abc_3sample",vel,U,dt,h,nt,nx,ny,1);
+	free_mat_mem(U);
+	delete [] vel;
 	}
-	std::cout<< " Time domain iteration is done\n";
-	w_dat("data/convFD",Vel_Mod,P,dt,h,nt,nrows,1,ncols);
 
-	//free memories
-	delete [] Vel_Mod;
-	delete [] f_src;
-	free_mat_mem(P);
-}
