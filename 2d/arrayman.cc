@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-void w_dat(std::string& filename, double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz){
+void w_dat(const std::string& filename, double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz){
 	std::string ext=".dat";
 	std::string fname;
 	std::ofstream myfile;
