@@ -49,7 +49,10 @@ void write_wve(const std::string& filename, double **U , int nx,int ny, int nz, 
 	std::ofstream file;
 	file.open(fname);
 	file << nx <<"\t"<< ny <<"\t"<< nz <<"\t"<< nt <<"\t"<< h <<"\t"<< dt<<std::endl;
+	int tprint=nt/10;
 	for(int i=0;i<nt;i++){
+		if(i%tprint==0){
+		std::cout<<"Writing Wavefield ... "<<float(i)/float(nt)*100<<"%\n";}
 		for(int j=0;j<nx*ny*nz;j++){
 			file<<std::fixed<<std::setprecision(3)<<U[i][j]<<"\t"; 
 			}
