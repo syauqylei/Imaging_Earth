@@ -19,7 +19,12 @@ int main(){
 	srcloc=&sourceloc[0];
 	int nt=int(T/dt+1);
 	U=wvenacd(velocities,ny,nz,srcloc[0],fm,h,dt,T);
+<<<<<<< HEAD
 	write_wve("/scratch/syauqy/data/sample1",U,1,nx,ny,nt,dt,h);
+=======
+	write_wve("/scratch/syauqy/sample1",U,1,nx,ny,nt,dt,h);
+	w_dat("/scratch/syauqy/data/sample1", velocities,U,dt,h,nt,ny,nz,1);
+>>>>>>> dc0227c289d8302445f4a54b9fff527620737495
 	free_mat_mem(U);
 	}
 
