@@ -54,7 +54,7 @@ void w_csv(char *filename,double *Vel_mod, double **P,double dt,double h,int nt,
 }
 
 void w_vtk(char *filename,double *Vel_mod, double **P,double h,int nt,int nx, int ny, int nz){
-	std::string ext=".vtk";
+	std::string ext=".vts";
 	std::string fname;
 	std::ofstream myfile;
 	for (int t=0; t<nt;t++){

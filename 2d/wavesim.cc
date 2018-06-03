@@ -7,7 +7,6 @@
 
 
 double **wvenacd(double *vel, int nx, int ny,int srcloc, double fmax,double h, double dt,double T){
-	
 	int nt=int(T/dt+1);
 	double t;
 	double **U=alloc_mat(nt,nx*ny);
@@ -21,10 +20,13 @@ double **wvenacd(double *vel, int nx, int ny,int srcloc, double fmax,double h, d
 	beta[2]=0.52;
 	beta[3]=0.31;
 	
+	int tprint=nt/10;
+	
 	for (int i=1; i<nt-1;i++){
 		//time step
 		t=dt*i;
-		std::cout<<t<<"\n";
+		if(i%tprint==0){
+		std::cout<<"Calculating Wavefield ... "<<float(i)/float(nt)*100<<"%\n";}
 		//boundary Neumann
 		
 		for (int j=0;j<nx;j++){U[i][j]=U[i][j+nx];

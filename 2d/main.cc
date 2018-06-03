@@ -1,29 +1,25 @@
 #include <iostream>
-#include "wavesim.h"
+#include <fstream>
+#include <vector>
+#include "rnw.h"
 #include "arrayman.h"
+#include "wavesim.h"
 
 int main(){
-	int nx=100;
-	int ny=100;
-	
-	double *vel = new double [nx*ny];
-	for (int i=0;i<ny;i++){
-		for (int j=0;j<nx;j++){
-			
-			vel[i*nx+j]=4000.0;
-			}
-		}
-	
-	double t=0;
-	double T=1;
-	double h=10.00;
-	double f=50.0;
-	double dt=0.001;
-	int nt=int(T/dt);
+	int nx,ny,nz,ns;
+	int *srcloc;
+	double h,dt,T,fm;
+	double *velocities;
 	double **U;
-	U=wvenacd(vel,nx,ny,nx*(ny/2)+nx/2,f,h,dt,T);
-	w_dat("data/nacd_abc_3sample",vel,U,dt,h,nt,nx,ny,1);
+	std::vector<double> vel;
+	read_vel("x_iter_349.txt",vel,nx,ny,nz,h);
+	velocities=&vel[0];
+	std::vector<int> sourceloc;
+	read_fwdset("fwdset.txt",sourceloc,ns,dt,T,fm);
+	srcloc=&sourceloc[0];
+	int nt=int(T/dt+1);
+	U=wvenacd(velocities,ny,nz,srcloc[0],fm,h,dt,T);
+	write_wve("sample1",U,1,nx,ny,nt,dt,h);
 	free_mat_mem(U);
-	delete [] vel;
 	}
 
