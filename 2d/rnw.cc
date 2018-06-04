@@ -90,7 +90,7 @@ double **read_wve(const std::string& filename, int &nx, int &ny, int &nz, int &n
 	
 void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
 {
-	std::string ext=".vts";
+	std::string ext=".vtk";
 	std::stringstream itername;
 	for(int l=0;l<nt;l++)
 	{
