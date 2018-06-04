@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <sstream>
 #include <string>
 #include <vector>
 #include "arrayman.h"
@@ -91,11 +92,17 @@ double **read_wve(const std::string& filename, int &nx, int &ny, int &nz, int &n
 void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
 {
 	std::string ext=".vtk";
+<<<<<<< HEAD
 	std::stringstream itername;
+=======
+	int tprint=float(nt)/10.0;
+>>>>>>> 701784a0d5061259b13825a7458ca408c007a22d
 	for(int l=0;l<nt;l++)
 	{
+		if(l%tprint==0){std::cout<<"Writing Vtk File ........"<<float(l+1)/nt*100.0<<"% \n";}
+		std::stringstream ss;
 		ss << std::setfill('0') << std::setw(5) << l;
-		std::string fname=filename+ss+ext;
+		std::string fname=filename+ss.str()+ext;
 		std::ofstream file;
 		file.open(fname);
 		file <<"# vtk DataFile Version 2.0"<<std::endl;

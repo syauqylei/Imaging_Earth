@@ -6,20 +6,26 @@
 #include "wavesim.h"
 
 int main(){
-	int nx,ny,nz,ns;
-	int *srcloc;
+	int nx=100;
+	int ny=100;
 	double h,dt,T,fm;
 	double *velocities;
 	double **U;
+	/*
 	std::vector<double> vel;
 	read_vel("x_iter_349.txt",vel,nx,ny,nz,h);
 	velocities=&vel[0];
 	std::vector<int> sourceloc;
 	read_fwdset("fwdset.txt",sourceloc,ns,dt,T,fm);
 	srcloc=&sourceloc[0];
+	int nt=int(T/dt+1);*/
+	double *vel=new double[nx*ny]*
+	for (int i=0; i<nx*ny;i++){
+		vel[i]=4000.0;
+		}
+	U=wvenacd(vel,nx,ny,nx+nx/2,50.0,10.0,0.001,1); 
 	int nt=int(T/dt+1);
-	U=wvenacd(velocities,ny,nz,srcloc[10],fm,h,dt,T);
-	write_vtk("/scratch/syauqy/data/sample",U,h,nt,nx,ny,nz);
+	write_vtk("data/sample",U,10,nt,nx,ny,1);
 	free_mat_mem(U);
 	}
 
