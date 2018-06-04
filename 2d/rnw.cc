@@ -88,7 +88,7 @@ double **read_wve(const std::string& filename, int &nx, int &ny, int &nz, int &n
 	return U;
 	}
 	
-void write_vtk(std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
+void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
 {
 	std::string ext=".vts";
 	std::stringstream itername;
