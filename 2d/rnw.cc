@@ -82,8 +82,42 @@ double **read_wve(const std::string& filename, int &nx, int &ny, int &nz, int &n
 			dt=content;}
 		else{Ufield.push_back(content);}
 	}
-	std::cout<<nt<<"\t \n";
-	std::cout<<Ufield.size()-6<<"\t \n";
 	double **U=alloc_mat(nt,nx*ny*nz);
+	std::cout<<nx<<"\t "<<ny<<"\t "<<nz<<"\t "<<nt<<"\t \n";
+	std::cout<<Ufield.size()-6<<"\t \n";
 	return U;
 	}
+	
+void write_vtk(std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
+{
+	std::string ext=".vts";
+	std::stringstream itername;
+	for(int l=0;l<nt;l++)
+	{
+		ss << std::setfill('0') << std::setw(5) << l;
+		std::string fname=filename+ss+ext;
+		std::ofstream file;
+		file.open(fname);
+		file <<"# vtk DataFile Version 2.0"<<std::endl;
+		file <<filename<<std::endl;
+		file <<"ASCII"<<std::endl;
+		file <<"DATASET"<<"\t"<<"STRUCTURED_POINTS"<<std::endl;
+		file <<"DIMENSIONS"<<"\t"<<nx<<"\t"<<ny<<"\t"<<nz<<std::endl;
+		file <<"SPACING"<<"\t"<<h<<"\t"<<h<<"\t"<<h<<std::endl;
+		file <<"ORIGIN"<<"\t"<<"0"<<"\t"<<"0"<<"\t"<<"0"<<std::endl;
+		file <<"POINT_DATA"<<"\t"<<nx*ny*nz<<std::endl;
+		file <<"SCALARS"<<"\t"<<"Wavefield"<<"\t"<<"float"<<"\t"<<"4"<<std::endl;
+		file <<"LOOKUP_TABLE"<<"\t"<<"default"<<std::endl;
+		for (int i=0;i<nz;i++)
+		{
+			for (int j=0;j<ny;j++)
+			{
+				for(int k=0;k<nx;k++)
+				{
+				file <<std::fixed<<std::setprecision(5)<<k*h<<" "<<j*h<<" "<<i*h<<" "<<U[i][i*nx*ny+j*nx+k]<<std::endl;
+				}
+			}
+		}
+		file.close();
+	}
+}
