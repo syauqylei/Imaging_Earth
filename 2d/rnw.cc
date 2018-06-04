@@ -92,11 +92,7 @@ double **read_wve(const std::string& filename, int &nx, int &ny, int &nz, int &n
 void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
 {
 	std::string ext=".vtk";
-<<<<<<< HEAD
-	std::stringstream itername;
-=======
 	int tprint=float(nt)/10.0;
->>>>>>> 701784a0d5061259b13825a7458ca408c007a22d
 	for(int l=0;l<nt;l++)
 	{
 		if(l%tprint==0){std::cout<<"Writing Vtk File ........"<<float(l+1)/nt*100.0<<"% \n";}
@@ -113,7 +109,7 @@ void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, in
 		file <<"SPACING"<<"\t"<<h<<"\t"<<h<<"\t"<<h<<std::endl;
 		file <<"ORIGIN"<<"\t"<<"0"<<"\t"<<"0"<<"\t"<<"0"<<std::endl;
 		file <<"POINT_DATA"<<"\t"<<nx*ny*nz<<std::endl;
-		file <<"SCALARS"<<"\t"<<"Wavefield"<<"\t"<<"float"<<"\t"<<"4"<<std::endl;
+		file <<"SCALARS"<<"\t"<<"Wavefield"<<"\t"<<"double"<<"\t"<<"4"<<std::endl;
 		file <<"LOOKUP_TABLE"<<"\t"<<"default"<<std::endl;
 		for (int i=0;i<nz;i++)
 		{
