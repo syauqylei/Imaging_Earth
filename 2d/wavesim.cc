@@ -35,6 +35,7 @@ double **wvenacd(double *vel, int nx, int ny,int srcloc, double fmax,double h, d
 		for (int j=nx*ny-nx;j<nx*ny;j++){U[i][j]=U[i][j-nx];
 											Ux[i][j]=Ux[i][j-nx];
 											Uy[i][j]=Uy[i][j-nx];}
+			
 		for (int j=nx; j<nx*ny-nx;j++){
 			if(j%nx==0){U[i][j]=U[i][j+1];
 						Ux[i][j]=Ux[i][j+1];
@@ -48,7 +49,6 @@ double **wvenacd(double *vel, int nx, int ny,int srcloc, double fmax,double h, d
 		for (int j=nx; j<nx*ny-nx;j++){
 			//solution of nacd
 			if(j%nx==0 || j%nx==nx-1){continue;}
-			
 			U[i+1][j]=2.0*U[i][j]-U[i-1][j]+cfl1(vel[j],dt)*d2xd2y(U[i],j,nx,h)
 											-cfl2(vel[j],dt,h)*(d4x(U[i],Ux[i],j,nx,h)+d4y(U[i],Uy[i],j,nx,h))
 											+cfl3(vel[j],dt)*(d2x2y(U[i],Ux[i],Uy[i],j,nx,h));
