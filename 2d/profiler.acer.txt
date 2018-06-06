@@ -1,0 +1,1070 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 47.40      0.73     0.73   224550     0.00     0.00  hiabc(double**, int, int, int, double, double*, int)
+  7.47      0.84     0.12  1247500     0.00     0.00  d5x(double*, double*, int, int, double)
+  6.90      0.95     0.11  1247500     0.00     0.00  d3x2y(double*, double*, int, int, double)
+  6.74      1.05     0.10  1247500     0.00     0.00  d4y(double*, double*, int, int, double)
+  5.84      1.15     0.09  1247500     0.00     0.00  d4xy(double*, double*, int, int, double)
+  4.79      1.22     0.07  3742500     0.00     0.00  d2xd2y(double*, int, int, double)
+  4.55      1.29     0.07  1247500     0.00     0.00  dx4y(double*, double*, int, int, double)
+  3.90      1.35     0.06  1247500     0.00     0.00  d5y(double*, double*, int, int, double)
+  3.25      1.40     0.05  1247500     0.00     0.00  d2x3y(double*, double*, int, int, double)
+  2.60      1.44     0.04  1247500     0.00     0.00  d4x(double*, double*, int, int, double)
+  2.60      1.48     0.04        1     0.04     1.52  wvenacd(double*, int, int, int, double, double, double, double)
+  1.95      1.51     0.03  1247500     0.00     0.00  d2x2y(double*, double*, double*, int, int, double)
+  0.49      1.52     0.01   898200     0.00     0.00  qx(double, double)
+  0.41      1.52     0.01                             ___Z6d2xd2yPdiidEND
+  0.32      1.53     0.01  3742500     0.00     0.00  cfl3(double, double)
+  0.32      1.53     0.01                             ___Z4cfl2dddEND
+  0.24      1.54     0.00                             ___Z5d3x2yPdS_iidEND
+  0.16      1.54     0.00                             ___Z2qxddEND
+  0.08      1.54     0.00                             ___Z3d4yPdS_iidEND
+  0.00      1.54     0.00  3742500     0.00     0.00  cfl1(double, double)
+  0.00      1.54     0.00  3742500     0.00     0.00  cfl2(double, double, double)
+  0.00      1.54     0.00   898200     0.00     0.00  qt(double, double)
+  0.00      1.54     0.00    74850     0.00     0.00  cfl(double, double, double)
+  0.00      1.54     0.00    50100     0.00     0.00  std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  0.00      1.54     0.00    25577     0.00     0.00  std::char_traits<char>::length(char const*)
+  0.00      1.54     0.00    25574     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+  0.00      1.54     0.00    25051     0.00     0.00  std::ostream::operator<<(double)
+  0.00      1.54     0.00    25050     0.00     0.00  std::ostream::operator<<(std::ios_base& (*)(std::ios_base&))
+  0.00      1.54     0.00    25050     0.00     0.00  std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  0.00      1.54     0.00    25050     0.00     0.00  std::ios_base::precision(long)
+  0.00      1.54     0.00    25050     0.00     0.00  std::setprecision(int)
+  0.00      1.54     0.00    25050     0.00     0.00  std::fixed(std::ios_base&)
+  0.00      1.54     0.00    25050     0.00     0.00  std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags)
+  0.00      1.54     0.00    25050     0.00     0.00  std::operator~(std::_Ios_Fmtflags)
+  0.00      1.54     0.00    25050     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setprecision)
+  0.00      1.54     0.00    25050     0.00     0.00  std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags)
+  0.00      1.54     0.00    25050     0.00     0.00  std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  0.00      1.54     0.00      499     0.00     0.00  ricker_wavelet_1(double, double)
+  0.00      1.54     0.00       52     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const
+  0.00      1.54     0.00       20     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const
+  0.00      1.54     0.00       20     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const
+  0.00      1.54     0.00       20     0.00     0.00  std::pointer_traits<char const*>::pointer_to(char const&)
+  0.00      1.54     0.00       20     0.00     0.00  char const* std::__addressof<char const>(char const&)
+  0.00      1.54     0.00       20     0.00     0.00  char const* std::addressof<char const>(char const&)
+  0.00      1.54     0.00       18     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long)
+  0.00      1.54     0.00       16     0.00     0.00  std::pointer_traits<char*>::pointer_to(char&)
+  0.00      1.54     0.00       16     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data()
+  0.00      1.54     0.00       16     0.00     0.00  char* std::__addressof<char>(char&)
+  0.00      1.54     0.00       16     0.00     0.00  char* std::addressof<char>(char&)
+  0.00      1.54     0.00       14     0.00     0.00  std::char_traits<char>::assign(char&, char const&)
+  0.00      1.54     0.00       14     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long)
+  0.00      1.54     0.00       13     0.00     0.00  std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&)
+  0.00      1.54     0.00       12     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+  0.00      1.54     0.00       12     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+  0.00      1.54     0.00       11     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator()
+  0.00      1.54     0.00        9     0.00     0.00  std::ostream::operator<<(float)
+  0.00      1.54     0.00        9     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data(char*)
+  0.00      1.54     0.00        8     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const
+  0.00      1.54     0.00        7     0.00     0.00  std::allocator<char>::allocator(std::allocator<char> const&)
+  0.00      1.54     0.00        7     0.00     0.00  std::allocator<char>::allocator(std::allocator<char> const&)
+  0.00      1.54     0.00        7     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&)
+  0.00      1.54     0.00        6     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::pptr() const
+  0.00      1.54     0.00        5     0.00     0.00  std::char_traits<char>::copy(char*, char const*, unsigned long)
+  0.00      1.54     0.00        5     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_capacity(unsigned long)
+  0.00      1.54     0.00        5     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&)
+  0.00      1.54     0.00        5     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long)
+  0.00      1.54     0.00        4     0.00     0.00  free_mat_mem(double**)
+  0.00      1.54     0.00        4     0.00     0.00  alloc_mat(int, int)
+  0.00      1.54     0.00        4     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const
+  0.00      1.54     0.00        4     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::rdstate() const
+  0.00      1.54     0.00        4     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00      1.54     0.00        4     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate)
+  0.00      1.54     0.00        4     0.00     0.00  std::remove_reference<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type&& std::move<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+  0.00      1.54     0.00        4     0.00     0.00  std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)
+  0.00      1.54     0.00        3     0.00     0.00  __gnu_cxx::new_allocator<char>::deallocate(char*, unsigned long)
+  0.00      1.54     0.00        3     0.00     0.00  bool __gnu_cxx::__is_null_pointer<char const>(char const*)
+  0.00      1.54     0.00        3     0.00     0.00  std::allocator<char>::allocator()
+  0.00      1.54     0.00        3     0.00     0.00  std::allocator<char>::~allocator()
+  0.00      1.54     0.00        3     0.00     0.00  std::allocator_traits<std::allocator<char> >::deallocate(std::allocator<char>&, char*, unsigned long)
+  0.00      1.54     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long)
+  0.00      1.54     0.00        3     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*)
+  0.00      1.54     0.00        3     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  0.00      1.54     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char const*, char const*)
+  0.00      1.54     0.00        3     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char const*>(char const*, char const*, std::__false_type)
+  0.00      1.54     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)
+  0.00      1.54     0.00        3     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string()
+  0.00      1.54     0.00        3     0.00     0.00  std::iterator_traits<char const*>::difference_type std::__distance<char const*>(char const*, char const*, std::random_access_iterator_tag)
+  0.00      1.54     0.00        3     0.00     0.00  std::iterator_traits<char const*>::difference_type std::distance<char const*>(char const*, char const*)
+  0.00      1.54     0.00        2     0.00     0.00  bool __gnu_cxx::__is_null_pointer<char>(char*)
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::egptr() const
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::pbase() const
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_check(unsigned long, char const*) const
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_limit(unsigned long, unsigned long) const
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >::basic_ostream()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >::~basic_ostream()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_filebuf<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode)
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode)
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ofstream<char, std::char_traits<char> >::close()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf()
+  0.00      1.54     0.00        2     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*)
+  0.00      1.54     0.00        2     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char*, char*)
+  0.00      1.54     0.00        2     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char*>(char*, char*, std::__false_type)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::clear()
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::replace(unsigned long, unsigned long, char const*, unsigned long)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::basic_ios()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::basic_ios()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::~basic_ios()
+  0.00      1.54     0.00        2     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::~basic_ios()
+  0.00      1.54     0.00        2     0.00     0.00  std::iterator_traits<char*>::difference_type std::__distance<char*>(char*, char*, std::random_access_iterator_tag)
+  0.00      1.54     0.00        2     0.00     0.00  void std::__alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&)
+  0.00      1.54     0.00        2     0.00     0.00  void std::__do_alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&, std::integral_constant<bool, true>)
+  0.00      1.54     0.00        2     0.00     0.00  std::iterator_traits<char*>::difference_type std::distance<char*>(char*, char*)
+  0.00      1.54     0.00        2     0.00     0.00  std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00      1.54     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  0.00      1.54     0.00        1     0.00     0.00  write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int)
+  0.00      1.54     0.00        1     0.00     0.00  std::ctype<char>::widen(char) const
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::fill() const
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::widen(char) const
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_iostream<char, std::char_traits<char> >::basic_iostream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_iostream<char, std::char_traits<char> >::~basic_iostream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_istream<char, std::char_traits<char> >::basic_istream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_istream<char, std::char_traits<char> >::~basic_istream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf()
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf()
+  0.00      1.54     0.00        1     0.00     0.00  std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::basic_stringbuf(std::_Ios_Openmode)
+  0.00      1.54     0.00        1     0.00     0.00  std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
+  0.00      1.54     0.00        1     0.00     0.00  std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode)
+  0.00      1.54     0.00        1     0.00     0.00  std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode)
+  0.00      1.54     0.00        1     0.00     0.00  std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()
+  0.00      1.54     0.00        1     0.00     0.00  std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()
+  0.00      1.54     0.00        1     0.00     0.00  std::ios_base::width(long)
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ios<char, std::char_traits<char> >::fill(char)
+  0.00      1.54     0.00        1     0.00     0.00  std::ctype<char> const& std::__check_facet<std::ctype<char> >(std::ctype<char> const*)
+  0.00      1.54     0.00        1     0.00     0.00  std::setw(int)
+  0.00      1.54     0.00        1     0.00     0.00  std::_Setfill<char> std::setfill<char>(char)
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setw)
+  0.00      1.54     0.00        1     0.00     0.00  std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setfill<char>)
+  0.00      1.54     0.00        1     0.00     0.00  __sti___10_wavesim_cc_33591591
+  0.00      1.54     0.00        1     0.00     0.00  __sti___11_arrayman_cc_8626151e
+  0.00      1.54     0.00        1     0.00     0.00  __sti___6_rnw_cc_5ebbe28c
+  0.00      1.54     0.00        1     0.00     0.00  __sti___7_main_cc_main
+  0.00      1.54     0.00        1     0.00     0.00  __sti___8_abcon_cc__Z2qxdd
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 16 byte(s) for 0.65% of 1.54 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     98.8    0.00    1.52                 main [1]
+                0.04    1.48       1/1           wvenacd(double*, int, int, int, double, double, double, double) [2]
+                0.00    0.00       1/3           std::allocator<char>::~allocator() [83]
+                0.00    0.00       1/3           std::allocator<char>::allocator() [82]
+                0.00    0.00       1/4           free_mat_mem(double**) [72]
+                0.00    0.00       1/12          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [59]
+                0.00    0.00       1/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+-----------------------------------------------
+                0.04    1.48       1/1           main [1]
+[2]     98.8    0.04    1.48       1         wvenacd(double*, int, int, int, double, double, double, double) [2]
+                0.73    0.01  224550/224550      hiabc(double**, int, int, int, double, double*, int) [3]
+                0.12    0.00 1247500/1247500     d5x(double*, double*, int, int, double) [4]
+                0.11    0.00 1247500/1247500     d3x2y(double*, double*, int, int, double) [5]
+                0.10    0.00 1247500/1247500     d4y(double*, double*, int, int, double) [6]
+                0.09    0.00 1247500/1247500     d4xy(double*, double*, int, int, double) [7]
+                0.07    0.00 3742500/3742500     d2xd2y(double*, int, int, double) [8]
+                0.07    0.00 1247500/1247500     dx4y(double*, double*, int, int, double) [9]
+                0.06    0.00 1247500/1247500     d5y(double*, double*, int, int, double) [10]
+                0.05    0.00 1247500/1247500     d2x3y(double*, double*, int, int, double) [11]
+                0.04    0.00 1247500/1247500     d4x(double*, double*, int, int, double) [12]
+                0.03    0.00 1247500/1247500     d2x2y(double*, double*, double*, int, int, double) [13]
+                0.01    0.00 3742500/3742500     cfl3(double, double) [16]
+                0.00    0.00 3742500/3742500     cfl2(double, double, double) [26]
+                0.00    0.00 3742500/3742500     cfl1(double, double) [25]
+                0.00    0.00   74850/74850       cfl(double, double, double) [28]
+                0.00    0.00     499/499         ricker_wavelet_1(double, double) [43]
+                0.00    0.00      18/25574       std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) [31]
+                0.00    0.00       9/9           std::ostream::operator<<(float) [61]
+                0.00    0.00       4/4           alloc_mat(int, int) [73]
+                0.00    0.00       3/4           free_mat_mem(double**) [72]
+-----------------------------------------------
+                0.73    0.01  224550/224550      wvenacd(double*, int, int, int, double, double, double, double) [2]
+[3]     47.9    0.73    0.01  224550         hiabc(double**, int, int, int, double, double*, int) [3]
+                0.01    0.00  898200/898200      qx(double, double) [14]
+                0.00    0.00  898200/898200      qt(double, double) [27]
+-----------------------------------------------
+                0.12    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[4]      7.5    0.12    0.00 1247500         d5x(double*, double*, int, int, double) [4]
+-----------------------------------------------
+                0.11    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[5]      6.9    0.11    0.00 1247500         d3x2y(double*, double*, int, int, double) [5]
+-----------------------------------------------
+                0.10    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[6]      6.7    0.10    0.00 1247500         d4y(double*, double*, int, int, double) [6]
+-----------------------------------------------
+                0.09    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[7]      5.8    0.09    0.00 1247500         d4xy(double*, double*, int, int, double) [7]
+-----------------------------------------------
+                0.07    0.00 3742500/3742500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[8]      4.8    0.07    0.00 3742500         d2xd2y(double*, int, int, double) [8]
+-----------------------------------------------
+                0.07    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[9]      4.5    0.07    0.00 1247500         dx4y(double*, double*, int, int, double) [9]
+-----------------------------------------------
+                0.06    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[10]     3.9    0.06    0.00 1247500         d5y(double*, double*, int, int, double) [10]
+-----------------------------------------------
+                0.05    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[11]     3.2    0.05    0.00 1247500         d2x3y(double*, double*, int, int, double) [11]
+-----------------------------------------------
+                0.04    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[12]     2.6    0.04    0.00 1247500         d4x(double*, double*, int, int, double) [12]
+-----------------------------------------------
+                0.03    0.00 1247500/1247500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[13]     1.9    0.03    0.00 1247500         d2x2y(double*, double*, double*, int, int, double) [13]
+-----------------------------------------------
+                0.01    0.00  898200/898200      hiabc(double**, int, int, int, double, double*, int) [3]
+[14]     0.5    0.01    0.00  898200         qx(double, double) [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.4    0.01    0.00                 ___Z6d2xd2yPdiidEND [15]
+-----------------------------------------------
+                0.01    0.00 3742500/3742500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[16]     0.3    0.01    0.00 3742500         cfl3(double, double) [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.3    0.01    0.00                 ___Z4cfl2dddEND [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     0.2    0.00    0.00                 ___Z5d3x2yPdS_iidEND [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.2    0.00    0.00                 ___Z2qxddEND [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.1    0.00    0.00                 ___Z3d4yPdS_iidEND [20]
+-----------------------------------------------
+                0.00    0.00 3742500/3742500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[25]     0.0    0.00    0.00 3742500         cfl1(double, double) [25]
+-----------------------------------------------
+                0.00    0.00 3742500/3742500     wvenacd(double*, int, int, int, double, double, double, double) [2]
+[26]     0.0    0.00    0.00 3742500         cfl2(double, double, double) [26]
+-----------------------------------------------
+                0.00    0.00  898200/898200      hiabc(double**, int, int, int, double, double*, int) [3]
+[27]     0.0    0.00    0.00  898200         qt(double, double) [27]
+-----------------------------------------------
+                0.00    0.00   74850/74850       wvenacd(double*, int, int, int, double, double, double, double) [2]
+[28]     0.0    0.00    0.00   74850         cfl(double, double, double) [28]
+-----------------------------------------------
+                0.00    0.00   25050/50100       std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [34]
+                0.00    0.00   25050/50100       std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [38]
+[29]     0.0    0.00    0.00   50100         std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [29]
+-----------------------------------------------
+                0.00    0.00       3/25577       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+                0.00    0.00   25574/25577       std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) [31]
+[30]     0.0    0.00    0.00   25577         std::char_traits<char>::length(char const*) [30]
+-----------------------------------------------
+                0.00    0.00      18/25574       wvenacd(double*, int, int, int, double, double, double, double) [2]
+                0.00    0.00   25556/25574       write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[31]     0.0    0.00    0.00   25574         std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) [31]
+                0.00    0.00   25574/25577       std::char_traits<char>::length(char const*) [30]
+-----------------------------------------------
+                0.00    0.00   25051/25051       write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[32]     0.0    0.00    0.00   25051         std::ostream::operator<<(double) [32]
+-----------------------------------------------
+                0.00    0.00   25050/25050       write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[33]     0.0    0.00    0.00   25050         std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) [33]
+                0.00    0.00   25050/25050       std::fixed(std::ios_base&) [37]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::fixed(std::ios_base&) [37]
+[34]     0.0    0.00    0.00   25050         std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [34]
+                0.00    0.00   25050/25050       std::operator~(std::_Ios_Fmtflags) [39]
+                0.00    0.00   25050/50100       std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [29]
+                0.00    0.00   25050/25050       std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [38]
+                0.00    0.00   25050/25050       std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [41]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setprecision) [40]
+[35]     0.0    0.00    0.00   25050         std::ios_base::precision(long) [35]
+-----------------------------------------------
+                0.00    0.00   25050/25050       write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[36]     0.0    0.00    0.00   25050         std::setprecision(int) [36]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) [33]
+[37]     0.0    0.00    0.00   25050         std::fixed(std::ios_base&) [37]
+                0.00    0.00   25050/25050       std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [34]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [34]
+[38]     0.0    0.00    0.00   25050         std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [38]
+                0.00    0.00   25050/50100       std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [29]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [34]
+[39]     0.0    0.00    0.00   25050         std::operator~(std::_Ios_Fmtflags) [39]
+-----------------------------------------------
+                0.00    0.00   25050/25050       write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[40]     0.0    0.00    0.00   25050         std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setprecision) [40]
+                0.00    0.00   25050/25050       std::ios_base::precision(long) [35]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [34]
+[41]     0.0    0.00    0.00   25050         std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [41]
+                0.00    0.00   25050/25050       std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [42]
+-----------------------------------------------
+                0.00    0.00   25050/25050       std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [41]
+[42]     0.0    0.00    0.00   25050         std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [42]
+-----------------------------------------------
+                0.00    0.00     499/499         wvenacd(double*, int, int, int, double, double, double, double) [2]
+[43]     0.0    0.00    0.00     499         ricker_wavelet_1(double, double) [43]
+-----------------------------------------------
+                0.00    0.00       2/52          void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [114]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [116]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [97]
+                0.00    0.00       3/52          void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+                0.00    0.00       3/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long) [85]
+                0.00    0.00       4/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00      14/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+                0.00    0.00      20/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [45]
+[44]     0.0    0.00    0.00      52         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+-----------------------------------------------
+                0.00    0.00       4/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+                0.00    0.00       4/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00      12/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [58]
+[45]     0.0    0.00    0.00      20         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [45]
+                0.00    0.00      20/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00      20/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [46]
+-----------------------------------------------
+                0.00    0.00      20/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [45]
+[46]     0.0    0.00    0.00      20         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [46]
+                0.00    0.00      20/20          std::pointer_traits<char const*>::pointer_to(char const&) [47]
+-----------------------------------------------
+                0.00    0.00      20/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [46]
+[47]     0.0    0.00    0.00      20         std::pointer_traits<char const*>::pointer_to(char const&) [47]
+                0.00    0.00      20/20          char const* std::addressof<char const>(char const&) [49]
+-----------------------------------------------
+                0.00    0.00      20/20          char const* std::addressof<char const>(char const&) [49]
+[48]     0.0    0.00    0.00      20         char const* std::__addressof<char const>(char const&) [48]
+-----------------------------------------------
+                0.00    0.00      20/20          std::pointer_traits<char const*>::pointer_to(char const&) [47]
+[49]     0.0    0.00    0.00      20         char const* std::addressof<char const>(char const&) [49]
+                0.00    0.00      20/20          char const* std::__addressof<char const>(char const&) [48]
+-----------------------------------------------
+                0.00    0.00       4/18          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00      14/18          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+[50]     0.0    0.00    0.00      18         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long) [50]
+-----------------------------------------------
+                0.00    0.00      16/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [52]
+[51]     0.0    0.00    0.00      16         std::pointer_traits<char*>::pointer_to(char&) [51]
+                0.00    0.00      16/16          char* std::addressof<char>(char&) [54]
+-----------------------------------------------
+                0.00    0.00       2/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&) [118]
+                0.00    0.00       3/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+                0.00    0.00       3/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [91]
+                0.00    0.00       8/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[52]     0.0    0.00    0.00      16         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [52]
+                0.00    0.00      16/16          std::pointer_traits<char*>::pointer_to(char&) [51]
+-----------------------------------------------
+                0.00    0.00      16/16          char* std::addressof<char>(char&) [54]
+[53]     0.0    0.00    0.00      16         char* std::__addressof<char>(char&) [53]
+-----------------------------------------------
+                0.00    0.00      16/16          std::pointer_traits<char*>::pointer_to(char&) [51]
+[54]     0.0    0.00    0.00      16         char* std::addressof<char>(char&) [54]
+                0.00    0.00      16/16          char* std::__addressof<char>(char&) [53]
+-----------------------------------------------
+                0.00    0.00      14/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+[55]     0.0    0.00    0.00      14         std::char_traits<char>::assign(char&, char const&) [55]
+-----------------------------------------------
+                0.00    0.00       2/14          void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+                0.00    0.00       2/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::clear() [113]
+                0.00    0.00       3/14          void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+                0.00    0.00       3/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [91]
+                0.00    0.00       4/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[56]     0.0    0.00    0.00      14         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+                0.00    0.00      14/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00      14/18          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long) [50]
+                0.00    0.00      14/14          std::char_traits<char>::assign(char&, char const&) [55]
+-----------------------------------------------
+                0.00    0.00       2/13          void std::__do_alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&, std::integral_constant<bool, true>) [126]
+                0.00    0.00       4/13          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00       7/13          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&) [66]
+[57]     0.0    0.00    0.00      13         std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&) [57]
+-----------------------------------------------
+                0.00    0.00      12/12          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [59]
+[58]     0.0    0.00    0.00      12         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [58]
+                0.00    0.00      12/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [45]
+                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long) [85]
+-----------------------------------------------
+                0.00    0.00       1/12          std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf() [147]
+                0.00    0.00       1/12          main [1]
+                0.00    0.00       2/12          std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+                0.00    0.00       8/12          write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[59]     0.0    0.00    0.00      12         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [59]
+                0.00    0.00      12/12          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [58]
+-----------------------------------------------
+                0.00    0.00       3/11          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long) [85]
+                0.00    0.00       4/11          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+                0.00    0.00       4/11          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[60]     0.0    0.00    0.00      11         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator() [60]
+-----------------------------------------------
+                0.00    0.00       9/9           wvenacd(double*, int, int, int, double, double, double, double) [2]
+[61]     0.0    0.00    0.00       9         std::ostream::operator<<(float) [61]
+-----------------------------------------------
+                0.00    0.00       1/9           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+                0.00    0.00       8/9           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[62]     0.0    0.00    0.00       9         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data(char*) [62]
+-----------------------------------------------
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_check(unsigned long, char const*) const [98]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_limit(unsigned long, unsigned long) const [99]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [114]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [116]
+[63]     0.0    0.00    0.00       8         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const [63]
+-----------------------------------------------
+                0.00    0.00       7/7           std::allocator<char>::allocator(std::allocator<char> const&) [65]
+[64]     0.0    0.00    0.00       7         std::allocator<char>::allocator(std::allocator<char> const&) [64]
+-----------------------------------------------
+                0.00    0.00       7/7           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&) [66]
+[65]     0.0    0.00    0.00       7         std::allocator<char>::allocator(std::allocator<char> const&) [65]
+                0.00    0.00       7/7           std::allocator<char>::allocator(std::allocator<char> const&) [64]
+-----------------------------------------------
+                0.00    0.00       3/7           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [91]
+                0.00    0.00       4/7           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[66]     0.0    0.00    0.00       7         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&) [66]
+                0.00    0.00       7/7           std::allocator<char>::allocator(std::allocator<char> const&) [65]
+                0.00    0.00       7/13          std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&) [57]
+-----------------------------------------------
+                0.00    0.00       6/6           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+[67]     0.0    0.00    0.00       6         std::basic_streambuf<char, std::char_traits<char> >::pptr() const [67]
+-----------------------------------------------
+                0.00    0.00       5/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [71]
+[68]     0.0    0.00    0.00       5         std::char_traits<char>::copy(char*, char const*, unsigned long) [68]
+-----------------------------------------------
+                0.00    0.00       1/5           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+                0.00    0.00       4/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[69]     0.0    0.00    0.00       5         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_capacity(unsigned long) [69]
+-----------------------------------------------
+                0.00    0.00       2/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&) [118]
+                0.00    0.00       3/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+[70]     0.0    0.00    0.00       5         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [70]
+-----------------------------------------------
+                0.00    0.00       2/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char*, char*) [111]
+                0.00    0.00       3/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char const*, char const*) [88]
+[71]     0.0    0.00    0.00       5         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [71]
+                0.00    0.00       5/5           std::char_traits<char>::copy(char*, char const*, unsigned long) [68]
+-----------------------------------------------
+                0.00    0.00       1/4           main [1]
+                0.00    0.00       3/4           wvenacd(double*, int, int, int, double, double, double, double) [2]
+[72]     0.0    0.00    0.00       4         free_mat_mem(double**) [72]
+-----------------------------------------------
+                0.00    0.00       4/4           wvenacd(double*, int, int, int, double, double, double, double) [2]
+[73]     0.0    0.00    0.00       4         alloc_mat(int, int) [73]
+-----------------------------------------------
+                0.00    0.00       4/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+[74]     0.0    0.00    0.00       4         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const [74]
+-----------------------------------------------
+                0.00    0.00       4/4           std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate) [77]
+[75]     0.0    0.00    0.00       4         std::basic_ios<char, std::char_traits<char> >::rdstate() const [75]
+-----------------------------------------------
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [130]
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+[76]     0.0    0.00    0.00       4         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00       8/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [52]
+                0.00    0.00       8/9           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data(char*) [62]
+                0.00    0.00       4/11          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator() [60]
+                0.00    0.00       4/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00       4/18          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long) [50]
+                0.00    0.00       4/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_capacity(unsigned long) [69]
+                0.00    0.00       4/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+                0.00    0.00       4/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [45]
+                0.00    0.00       4/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const [74]
+                0.00    0.00       4/7           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&) [66]
+                0.00    0.00       4/13          std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&) [57]
+-----------------------------------------------
+                0.00    0.00       2/4           std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [105]
+                0.00    0.00       2/4           std::basic_ofstream<char, std::char_traits<char> >::close() [106]
+[77]     0.0    0.00    0.00       4         std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate) [77]
+                0.00    0.00       4/4           std::basic_ios<char, std::char_traits<char> >::rdstate() const [75]
+                0.00    0.00       4/4           std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) [79]
+-----------------------------------------------
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [130]
+[78]     0.0    0.00    0.00       4         std::remove_reference<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type&& std::move<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [78]
+-----------------------------------------------
+                0.00    0.00       4/4           std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate) [77]
+[79]     0.0    0.00    0.00       4         std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) [79]
+-----------------------------------------------
+                0.00    0.00       3/3           std::allocator_traits<std::allocator<char> >::deallocate(std::allocator<char>&, char*, unsigned long) [84]
+[80]     0.0    0.00    0.00       3         __gnu_cxx::new_allocator<char>::deallocate(char*, unsigned long) [80]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+[81]     0.0    0.00    0.00       3         bool __gnu_cxx::__is_null_pointer<char const>(char const*) [81]
+-----------------------------------------------
+                0.00    0.00       1/3           main [1]
+                0.00    0.00       2/3           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[82]     0.0    0.00    0.00       3         std::allocator<char>::allocator() [82]
+-----------------------------------------------
+                0.00    0.00       1/3           main [1]
+                0.00    0.00       2/3           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[83]     0.0    0.00    0.00       3         std::allocator<char>::~allocator() [83]
+-----------------------------------------------
+                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long) [85]
+[84]     0.0    0.00    0.00       3         std::allocator_traits<std::allocator<char> >::deallocate(std::allocator<char>&, char*, unsigned long) [84]
+                0.00    0.00       3/3           __gnu_cxx::new_allocator<char>::deallocate(char*, unsigned long) [80]
+-----------------------------------------------
+                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [58]
+[85]     0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long) [85]
+                0.00    0.00       3/11          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator() [60]
+                0.00    0.00       3/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00       3/3           std::allocator_traits<std::allocator<char> >::deallocate(std::allocator<char>&, char*, unsigned long) [84]
+-----------------------------------------------
+                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+[86]     0.0    0.00    0.00       3         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*) [86]
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char const*>(char const*, char const*, std::__false_type) [89]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char const*>(char const*, char const*, std::__false_type) [89]
+[87]     0.0    0.00    0.00       3         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+                0.00    0.00       3/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00       3/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+                0.00    0.00       3/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char const*, char const*) [88]
+                0.00    0.00       3/3           bool __gnu_cxx::__is_null_pointer<char const>(char const*) [81]
+                0.00    0.00       3/3           std::iterator_traits<char const*>::difference_type std::distance<char const*>(char const*, char const*) [93]
+                0.00    0.00       1/9           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data(char*) [62]
+                0.00    0.00       1/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_capacity(unsigned long) [69]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+[88]     0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char const*, char const*) [88]
+                0.00    0.00       3/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [71]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*) [86]
+[89]     0.0    0.00    0.00       3         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char const*>(char const*, char const*, std::__false_type) [89]
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+-----------------------------------------------
+                0.00    0.00       1/3           main [1]
+                0.00    0.00       2/3           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[90]     0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+                0.00    0.00       3/25577       std::char_traits<char>::length(char const*) [30]
+                0.00    0.00       3/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [52]
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*) [86]
+                0.00    0.00       3/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [70]
+-----------------------------------------------
+                0.00    0.00       1/3           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::basic_stringbuf(std::_Ios_Openmode) [146]
+                0.00    0.00       2/3           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+[91]     0.0    0.00    0.00       3         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [91]
+                0.00    0.00       3/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+                0.00    0.00       3/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [52]
+                0.00    0.00       3/7           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&) [66]
+-----------------------------------------------
+                0.00    0.00       3/3           std::iterator_traits<char const*>::difference_type std::distance<char const*>(char const*, char const*) [93]
+[92]     0.0    0.00    0.00       3         std::iterator_traits<char const*>::difference_type std::__distance<char const*>(char const*, char const*, std::random_access_iterator_tag) [92]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [87]
+[93]     0.0    0.00    0.00       3         std::iterator_traits<char const*>::difference_type std::distance<char const*>(char const*, char const*) [93]
+                0.00    0.00       3/3           std::iterator_traits<char const*>::difference_type std::__distance<char const*>(char const*, char const*, std::random_access_iterator_tag) [92]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+[94]     0.0    0.00    0.00       2         bool __gnu_cxx::__is_null_pointer<char>(char*) [94]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+[95]     0.0    0.00    0.00       2         std::basic_streambuf<char, std::char_traits<char> >::egptr() const [95]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+[96]     0.0    0.00    0.00       2         std::basic_streambuf<char, std::char_traits<char> >::pbase() const [96]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_filebuf<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [104]
+[97]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [97]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::replace(unsigned long, unsigned long, char const*, unsigned long) [117]
+[98]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_check(unsigned long, char const*) const [98]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const [63]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::replace(unsigned long, unsigned long, char const*, unsigned long) [117]
+[99]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_limit(unsigned long, unsigned long) const [99]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const [63]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const [101]
+[100]    0.0    0.00    0.00       2         std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+                0.00    0.00       6/6           std::basic_streambuf<char, std::char_traits<char> >::pptr() const [67]
+                0.00    0.00       2/2           std::basic_streambuf<char, std::char_traits<char> >::pbase() const [96]
+                0.00    0.00       2/2           std::basic_streambuf<char, std::char_traits<char> >::egptr() const [95]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+                0.00    0.00       2/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [91]
+                0.00    0.00       2/12          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [59]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&) [118]
+-----------------------------------------------
+                0.00    0.00       2/2           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[101]    0.0    0.00    0.00       2         std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const [101]
+                0.00    0.00       2/2           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+-----------------------------------------------
+                0.00    0.00       1/2           std::basic_iostream<char, std::char_traits<char> >::basic_iostream() [135]
+                0.00    0.00       1/2           std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [141]
+[102]    0.0    0.00    0.00       2         std::basic_ostream<char, std::char_traits<char> >::basic_ostream() [102]
+-----------------------------------------------
+                0.00    0.00       1/2           std::basic_iostream<char, std::char_traits<char> >::~basic_iostream() [136]
+                0.00    0.00       1/2           std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [143]
+[103]    0.0    0.00    0.00       2         std::basic_ostream<char, std::char_traits<char> >::~basic_ostream() [103]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [105]
+[104]    0.0    0.00    0.00       2         std::basic_filebuf<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [104]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [97]
+-----------------------------------------------
+                0.00    0.00       2/2           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[105]    0.0    0.00    0.00       2         std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [105]
+                0.00    0.00       2/2           std::basic_filebuf<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [104]
+                0.00    0.00       2/4           std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate) [77]
+                0.00    0.00       2/2           std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [128]
+-----------------------------------------------
+                0.00    0.00       2/2           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[106]    0.0    0.00    0.00       2         std::basic_ofstream<char, std::char_traits<char> >::close() [106]
+                0.00    0.00       2/4           std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate) [77]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [108]
+[107]    0.0    0.00    0.00       2         std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [107]
+-----------------------------------------------
+                0.00    0.00       1/2           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf() [147]
+                0.00    0.00       1/2           std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf() [139]
+[108]    0.0    0.00    0.00       2         std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [108]
+                0.00    0.00       2/2           std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [107]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&) [118]
+[109]    0.0    0.00    0.00       2         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*) [109]
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char*>(char*, char*, std::__false_type) [112]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char*>(char*, char*, std::__false_type) [112]
+[110]    0.0    0.00    0.00       2         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+                0.00    0.00       2/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char*, char*) [111]
+                0.00    0.00       2/2           std::iterator_traits<char*>::difference_type std::distance<char*>(char*, char*) [127]
+                0.00    0.00       2/2           bool __gnu_cxx::__is_null_pointer<char>(char*) [94]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+[111]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char*, char*) [111]
+                0.00    0.00       2/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [71]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*) [109]
+[112]    0.0    0.00    0.00       2         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char*>(char*, char*, std::__false_type) [112]
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+[113]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::clear() [113]
+                0.00    0.00       2/14          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [56]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+[114]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [114]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const [63]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+[115]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [115]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [130]
+[116]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [116]
+                0.00    0.00       2/52          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [44]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::replace(unsigned long, unsigned long, char const*, unsigned long) [117]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const [63]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [116]
+[117]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::replace(unsigned long, unsigned long, char const*, unsigned long) [117]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_check(unsigned long, char const*) const [98]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_limit(unsigned long, unsigned long) const [99]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+[118]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&) [118]
+                0.00    0.00       2/16          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [52]
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*) [109]
+                0.00    0.00       2/5           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [70]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [100]
+[119]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+                0.00    0.00       4/20          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [45]
+                0.00    0.00       4/11          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator() [60]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [115]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::clear() [113]
+                0.00    0.00       2/2           void std::__alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&) [125]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_ios<char, std::char_traits<char> >::basic_ios() [121]
+[120]    0.0    0.00    0.00       2         std::basic_ios<char, std::char_traits<char> >::basic_ios() [120]
+-----------------------------------------------
+                0.00    0.00       1/2           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [148]
+                0.00    0.00       1/2           std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [140]
+[121]    0.0    0.00    0.00       2         std::basic_ios<char, std::char_traits<char> >::basic_ios() [121]
+                0.00    0.00       2/2           std::basic_ios<char, std::char_traits<char> >::basic_ios() [120]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_ios<char, std::char_traits<char> >::~basic_ios() [123]
+[122]    0.0    0.00    0.00       2         std::basic_ios<char, std::char_traits<char> >::~basic_ios() [122]
+-----------------------------------------------
+                0.00    0.00       1/2           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [150]
+                0.00    0.00       1/2           std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [142]
+[123]    0.0    0.00    0.00       2         std::basic_ios<char, std::char_traits<char> >::~basic_ios() [123]
+                0.00    0.00       2/2           std::basic_ios<char, std::char_traits<char> >::~basic_ios() [122]
+-----------------------------------------------
+                0.00    0.00       2/2           std::iterator_traits<char*>::difference_type std::distance<char*>(char*, char*) [127]
+[124]    0.0    0.00    0.00       2         std::iterator_traits<char*>::difference_type std::__distance<char*>(char*, char*, std::random_access_iterator_tag) [124]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [119]
+[125]    0.0    0.00    0.00       2         void std::__alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&) [125]
+                0.00    0.00       2/2           void std::__do_alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&, std::integral_constant<bool, true>) [126]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&) [125]
+[126]    0.0    0.00    0.00       2         void std::__do_alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&, std::integral_constant<bool, true>) [126]
+                0.00    0.00       2/13          std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&) [57]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [110]
+[127]    0.0    0.00    0.00       2         std::iterator_traits<char*>::difference_type std::distance<char*>(char*, char*) [127]
+                0.00    0.00       2/2           std::iterator_traits<char*>::difference_type std::__distance<char*>(char*, char*, std::random_access_iterator_tag) [124]
+-----------------------------------------------
+                0.00    0.00       2/2           std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [105]
+[128]    0.0    0.00    0.00       2         std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [128]
+-----------------------------------------------
+                0.00    0.00       2/2           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[129]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [114]
+                0.00    0.00       2/4           std::remove_reference<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type&& std::move<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [78]
+-----------------------------------------------
+                0.00    0.00       2/2           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[130]    0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [130]
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [76]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [116]
+                0.00    0.00       2/4           std::remove_reference<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type&& std::move<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) [78]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[131]    0.0    0.00    0.00       1         write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+                0.00    0.00   25556/25574       std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) [31]
+                0.00    0.00   25051/25051       std::ostream::operator<<(double) [32]
+                0.00    0.00   25050/25050       std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) [33]
+                0.00    0.00   25050/25050       std::setprecision(int) [36]
+                0.00    0.00   25050/25050       std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setprecision) [40]
+                0.00    0.00       8/12          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [59]
+                0.00    0.00       2/2           std::basic_ofstream<char, std::char_traits<char> >::close() [106]
+                0.00    0.00       2/2           std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [105]
+                0.00    0.00       2/3           std::allocator<char>::~allocator() [83]
+                0.00    0.00       2/3           std::allocator<char>::allocator() [82]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [129]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [130]
+                0.00    0.00       2/2           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const [101]
+                0.00    0.00       2/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [90]
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [140]
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [142]
+                0.00    0.00       1/1           std::setw(int) [155]
+                0.00    0.00       1/1           std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setfill<char>) [158]
+                0.00    0.00       1/1           std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setw) [157]
+                0.00    0.00       1/1           std::_Setfill<char> std::setfill<char>(char) [156]
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [148]
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [150]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::widen(char) const [134]
+[132]    0.0    0.00    0.00       1         std::ctype<char>::widen(char) const [132]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::fill(char) [153]
+[133]    0.0    0.00    0.00       1         std::basic_ios<char, std::char_traits<char> >::fill() const [133]
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::widen(char) const [134]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::fill() const [133]
+[134]    0.0    0.00    0.00       1         std::basic_ios<char, std::char_traits<char> >::widen(char) const [134]
+                0.00    0.00       1/1           std::ctype<char>::widen(char) const [132]
+                0.00    0.00       1/1           std::ctype<char> const& std::__check_facet<std::ctype<char> >(std::ctype<char> const*) [154]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [149]
+[135]    0.0    0.00    0.00       1         std::basic_iostream<char, std::char_traits<char> >::basic_iostream() [135]
+                0.00    0.00       1/2           std::basic_ostream<char, std::char_traits<char> >::basic_ostream() [102]
+                0.00    0.00       1/1           std::basic_istream<char, std::char_traits<char> >::basic_istream() [137]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [151]
+[136]    0.0    0.00    0.00       1         std::basic_iostream<char, std::char_traits<char> >::~basic_iostream() [136]
+                0.00    0.00       1/2           std::basic_ostream<char, std::char_traits<char> >::~basic_ostream() [103]
+                0.00    0.00       1/1           std::basic_istream<char, std::char_traits<char> >::~basic_istream() [138]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_iostream<char, std::char_traits<char> >::basic_iostream() [135]
+[137]    0.0    0.00    0.00       1         std::basic_istream<char, std::char_traits<char> >::basic_istream() [137]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_iostream<char, std::char_traits<char> >::~basic_iostream() [136]
+[138]    0.0    0.00    0.00       1         std::basic_istream<char, std::char_traits<char> >::~basic_istream() [138]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [143]
+[139]    0.0    0.00    0.00       1         std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf() [139]
+                0.00    0.00       1/2           std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [108]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[140]    0.0    0.00    0.00       1         std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [140]
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [141]
+                0.00    0.00       1/2           std::basic_ios<char, std::char_traits<char> >::basic_ios() [121]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [140]
+[141]    0.0    0.00    0.00       1         std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [141]
+                0.00    0.00       1/2           std::basic_ostream<char, std::char_traits<char> >::basic_ostream() [102]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[142]    0.0    0.00    0.00       1         std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [142]
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [143]
+                0.00    0.00       1/2           std::basic_ios<char, std::char_traits<char> >::~basic_ios() [123]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [142]
+[143]    0.0    0.00    0.00       1         std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [143]
+                0.00    0.00       1/1           std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf() [139]
+                0.00    0.00       1/2           std::basic_ostream<char, std::char_traits<char> >::~basic_ostream() [103]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [145]
+[144]    0.0    0.00    0.00       1         std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [144]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::basic_stringbuf(std::_Ios_Openmode) [146]
+[145]    0.0    0.00    0.00       1         std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [145]
+                0.00    0.00       1/1           std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [144]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [149]
+[146]    0.0    0.00    0.00       1         std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::basic_stringbuf(std::_Ios_Openmode) [146]
+                0.00    0.00       1/1           std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [145]
+                0.00    0.00       1/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [91]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [151]
+[147]    0.0    0.00    0.00       1         std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf() [147]
+                0.00    0.00       1/2           std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [108]
+                0.00    0.00       1/12          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [59]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[148]    0.0    0.00    0.00       1         std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [148]
+                0.00    0.00       1/2           std::basic_ios<char, std::char_traits<char> >::basic_ios() [121]
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [149]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [148]
+[149]    0.0    0.00    0.00       1         std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode) [149]
+                0.00    0.00       1/1           std::basic_iostream<char, std::char_traits<char> >::basic_iostream() [135]
+                0.00    0.00       1/1           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::basic_stringbuf(std::_Ios_Openmode) [146]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[150]    0.0    0.00    0.00       1         std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [150]
+                0.00    0.00       1/2           std::basic_ios<char, std::char_traits<char> >::~basic_ios() [123]
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [151]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [150]
+[151]    0.0    0.00    0.00       1         std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream() [151]
+                0.00    0.00       1/1           std::basic_iostream<char, std::char_traits<char> >::~basic_iostream() [136]
+                0.00    0.00       1/1           std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf() [147]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setw) [157]
+[152]    0.0    0.00    0.00       1         std::ios_base::width(long) [152]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setfill<char>) [158]
+[153]    0.0    0.00    0.00       1         std::basic_ios<char, std::char_traits<char> >::fill(char) [153]
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::fill() const [133]
+-----------------------------------------------
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::widen(char) const [134]
+[154]    0.0    0.00    0.00       1         std::ctype<char> const& std::__check_facet<std::ctype<char> >(std::ctype<char> const*) [154]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[155]    0.0    0.00    0.00       1         std::setw(int) [155]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[156]    0.0    0.00    0.00       1         std::_Setfill<char> std::setfill<char>(char) [156]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[157]    0.0    0.00    0.00       1         std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setw) [157]
+                0.00    0.00       1/1           std::ios_base::width(long) [152]
+-----------------------------------------------
+                0.00    0.00       1/1           write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [131]
+[158]    0.0    0.00    0.00       1         std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setfill<char>) [158]
+                0.00    0.00       1/1           std::basic_ios<char, std::char_traits<char> >::fill(char) [153]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [639]
+[159]    0.0    0.00    0.00       1         __sti___10_wavesim_cc_33591591 [159]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [639]
+[160]    0.0    0.00    0.00       1         __sti___11_arrayman_cc_8626151e [160]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [639]
+[161]    0.0    0.00    0.00       1         __sti___6_rnw_cc_5ebbe28c [161]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [639]
+[162]    0.0    0.00    0.00       1         __sti___7_main_cc_main [162]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [639]
+[163]    0.0    0.00    0.00       1         __sti___8_abcon_cc__Z2qxdd [163]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [72] free_mat_mem(double**) [32] std::ostream::operator<<(double) [149] std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode)
+  [43] ricker_wavelet_1(double, double) [61] std::ostream::operator<<(float) [150] std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()
+  [27] qt(double, double)     [68] std::char_traits<char>::copy(char*, char const*, unsigned long) [151] std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()
+  [14] qx(double, double)     [55] std::char_traits<char>::assign(char&, char const&) [34] std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  [28] cfl(double, double, double) [30] std::char_traits<char>::length(char const*) [152] std::ios_base::width(long)
+  [12] d4x(double*, double*, int, int, double) [104] std::basic_filebuf<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [35] std::ios_base::precision(long)
+   [6] d4y(double*, double*, int, int, double) [139] std::basic_filebuf<char, std::char_traits<char> >::~basic_filebuf() [153] std::basic_ios<char, std::char_traits<char> >::fill(char)
+   [4] d5x(double*, double*, int, int, double) [105] std::basic_ofstream<char, std::char_traits<char> >::open(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) [77] std::basic_ios<char, std::char_traits<char> >::setstate(std::_Ios_Iostate)
+  [10] d5y(double*, double*, int, int, double) [106] std::basic_ofstream<char, std::char_traits<char> >::close() [120] std::basic_ios<char, std::char_traits<char> >::basic_ios()
+  [25] cfl1(double, double)  [140] std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [121] std::basic_ios<char, std::char_traits<char> >::basic_ios()
+  [26] cfl2(double, double, double) [141] std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream() [122] std::basic_ios<char, std::char_traits<char> >::~basic_ios()
+  [16] cfl3(double, double)  [142] std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [123] std::basic_ios<char, std::char_traits<char> >::~basic_ios()
+   [7] d4xy(double*, double*, int, int, double) [143] std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream() [92] std::iterator_traits<char const*>::difference_type std::__distance<char const*>(char const*, char const*, std::random_access_iterator_tag)
+   [9] dx4y(double*, double*, int, int, double) [47] std::pointer_traits<char const*>::pointer_to(char const&) [124] std::iterator_traits<char*>::difference_type std::__distance<char*>(char*, char*, std::random_access_iterator_tag)
+  [13] d2x2y(double*, double*, double*, int, int, double) [51] std::pointer_traits<char*>::pointer_to(char&) [48] char const* std::__addressof<char const>(char const&)
+  [11] d2x3y(double*, double*, int, int, double) [144] std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [53] char* std::__addressof<char>(char&)
+   [5] d3x2y(double*, double*, int, int, double) [145] std::basic_streambuf<char, std::char_traits<char> >::basic_streambuf() [36] std::setprecision(int)
+   [3] hiabc(double**, int, int, int, double, double*, int) [107] std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [154] std::ctype<char> const& std::__check_facet<std::ctype<char> >(std::ctype<char> const*)
+   [8] d2xd2y(double*, int, int, double) [108] std::basic_streambuf<char, std::char_traits<char> >::~basic_streambuf() [125] void std::__alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&)
+   [2] wvenacd(double*, int, int, int, double, double, double, double) [84] std::allocator_traits<std::allocator<char> >::deallocate(std::allocator<char>&, char*, unsigned long) [126] void std::__do_alloc_on_move<std::allocator<char> >(std::allocator<char>&, std::allocator<char>&, std::integral_constant<bool, true>)
+  [73] alloc_mat(int, int)    [85] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_destroy(unsigned long) [78] std::remove_reference<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>::type&& std::move<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&)
+ [131] write_rec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double**, int, double, double, int, int) [58] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [57] std::remove_reference<std::allocator<char>&>::type&& std::move<std::allocator<char>&>(std::allocator<char>&)
+  [80] __gnu_cxx::new_allocator<char>::deallocate(char*, unsigned long) [69] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_capacity(unsigned long) [155] std::setw(int)
+  [81] bool __gnu_cxx::__is_null_pointer<char const>(char const*) [66] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char>&&) [37] std::fixed(std::ios_base&)
+  [94] bool __gnu_cxx::__is_null_pointer<char>(char*) [70] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [156] std::_Setfill<char> std::setfill<char>(char)
+  [67] std::basic_streambuf<char, std::char_traits<char> >::pptr() const [86] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*) [93] std::iterator_traits<char const*>::difference_type std::distance<char const*>(char const*, char const*)
+  [95] std::basic_streambuf<char, std::char_traits<char> >::egptr() const [87] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [127] std::iterator_traits<char*>::difference_type std::distance<char*>(char*, char*)
+  [96] std::basic_streambuf<char, std::char_traits<char> >::pbase() const [109] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*) [49] char const* std::addressof<char const>(char const&)
+ [132] std::ctype<char>::widen(char) const [110] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) [54] char* std::addressof<char>(char&)
+  [45] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [52] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [38] std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags)
+  [46] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [56] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [29] std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  [63] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size() const [88] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char const*, char const*) [39] std::operator~(std::_Ios_Fmtflags)
+  [97] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [111] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars(char*, char*, char*) [31] std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+  [74] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const [89] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char const*>(char const*, char const*, std::__false_type) [40] std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setprecision)
+  [44] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [112] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct_aux<char*>(char*, char*, std::__false_type) [157] std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setw)
+  [98] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_check(unsigned long, char const*) const [60] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_get_allocator() [158] std::basic_ostream<char, std::char_traits<char> >& std::operator<< <char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, std::_Setfill<char>)
+  [99] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_limit(unsigned long, unsigned long) const [113] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::clear() [41] std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags)
+ [100] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::str() const [114] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::append(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [79] std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)
+ [101] std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const [115] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [42] std::operator|(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+ [133] std::basic_ios<char, std::char_traits<char> >::fill() const [116] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::insert(unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [128] std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+ [134] std::basic_ios<char, std::char_traits<char> >::widen(char) const [62] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data(char*) [129] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [75] std::basic_ios<char, std::char_traits<char> >::rdstate() const [71] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [130] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&)
+  [64] std::allocator<char>::allocator(std::allocator<char> const&) [117] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::replace(unsigned long, unsigned long, char const*, unsigned long) [19] ___Z2qxddEND (abcon.cc)
+  [82] std::allocator<char>::allocator() [50] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long) [20] ___Z3d4yPdS_iidEND (hider.cc)
+  [65] std::allocator<char>::allocator(std::allocator<char> const&) [76] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [17] ___Z4cfl2dddEND (coeff.cc)
+  [83] std::allocator<char>::~allocator() [90] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) [18] ___Z5d3x2yPdS_iidEND (hider.cc)
+ [135] std::basic_iostream<char, std::char_traits<char> >::basic_iostream() [91] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string() [15] ___Z6d2xd2yPdiidEND (hider.cc)
+ [136] std::basic_iostream<char, std::char_traits<char> >::~basic_iostream() [118] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*, void>(char*, char*, std::allocator<char> const&) [159] __sti___10_wavesim_cc_33591591
+ [137] std::basic_istream<char, std::char_traits<char> >::basic_istream() [59] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [160] __sti___11_arrayman_cc_8626151e
+ [138] std::basic_istream<char, std::char_traits<char> >::~basic_istream() [119] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) [161] __sti___6_rnw_cc_5ebbe28c
+ [102] std::basic_ostream<char, std::char_traits<char> >::basic_ostream() [146] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::basic_stringbuf(std::_Ios_Openmode) [162] __sti___7_main_cc_main
+ [103] std::basic_ostream<char, std::char_traits<char> >::~basic_ostream() [147] std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf() [163] __sti___8_abcon_cc__Z2qxdd
+  [33] std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) [148] std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::_Ios_Openmode)
