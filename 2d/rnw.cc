@@ -98,7 +98,7 @@ void write_rec(const std::string& filename, double **U,int srcloc, double h,doub
 	file.open(filename+ss.str()+ext1);
 	for (int i=0;i<nt;i++){
 		for (int j=0;j<nx;j++){
-		file << std::fixed() <<std::setprecision(5) << U[i][j]<<"\t";
+		file << std::fixed <<std::setprecision(5) << U[i][j]<<"\t";
 		}
 		std::cout<<"\n";
 	}
