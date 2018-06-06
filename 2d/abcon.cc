@@ -2,7 +2,7 @@
 #include <cmath>
 #include "coeff.h"
 
-const double b = 0;
+const double b = 0.4;
 
 double qx(double bta,double cfv){
 	double rslt=(b*(bta+cfv)-cfv)/((bta+cfv)*(1-b));
