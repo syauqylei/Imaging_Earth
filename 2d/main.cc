@@ -17,7 +17,7 @@ int main(){
 	double *Velocity=&vel[0];
 	double **U;
 	U=wvenacd(Velocity,nx,ny,nx/2,fm,h,dt,T);
-	w_dat("data/sample",Velocity,U,dt,h,nt,nx,ny,1);
+	w_dat("/scratch/syauqy/data/sample",Velocity,U,dt,h,nt,nx,ny,1);
 	free_mat_mem(U);
 	}
 
