@@ -124,3 +124,23 @@ void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, in
 		file.close();
 	}
 }
+
+void write_record(std::string& filename, double **U,int srcloc, double h,double dt, int nx,int nt){
+	std::ofstream file;
+	std::stringstream ss;
+	ss << std::setfill('0') << std::setw(5) << srcloc;
+	std::string ext1=".rec";
+	std::String ext2=".txt";
+	file.open(filename+ss.str()+ext1);
+	for (int i=0;i<nt;i++){
+		for (int j=0;j<nx;j++){
+		file << U[i][j]<<"\t";
+		}
+		std::cout<<"\n";
+	}
+	file.close();
+	
+	file.open(filename+ss.str()+ext2);
+	file<<srcloc<<"\t"<<h<<"\t"<<nx<<"\t"<<"\t"<<nt<<"\n";
+	file.close
+}

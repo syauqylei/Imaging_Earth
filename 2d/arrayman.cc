@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-void w_dat(const std::string& filename, double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz){
+void w_dat(const std::string& filename, double *Vel_mod, double **P,double dt,double h,int nt,int nx, int ny, int nz,double a,double b, double c){
 	std::string ext=".dat";
 	std::string fname;
 	std::ofstream myfile;
@@ -22,9 +22,9 @@ void w_dat(const std::string& filename, double *Vel_mod, double **P,double dt,do
 		myfile << "VARIABLES = "<<"\"x\""<<","<<"\"y\""<<","<<"\"z\""<<","<<"\"Wavefield\""<<","<<"\"Velocity\""<<std::endl;
 		myfile << "ZONE T = "<<"\"Frame "<<std::to_string(t)<<"\""<<", I = "<< std::to_string(nx)<<", J = "<< std::to_string(ny)<<", K = "<< std::to_string(nz)<<std::endl;
 		for (int i=0; i<nz;i++){
-			for (int j=0; j<nx;j++){
-				for (int k=0;k<ny;k++){
-					myfile << std::fixed<< std::setprecision(5)<<j*h+h/2.0<<","<< k*h+h/2.0<<","<< i*h+h/2.0<<","<<P[t][k*nx*nz+i*nx+j]<<","<<Vel_mod[k*nx*nz+i*nx+j]<<"\n";
+			for (int j=0; j<ny;j++){
+				for (int k=0;k<nx;k++){
+					myfile << std::fixed<< std::setprecision(5)<<a*k*h+h/2.0<<","<<b*j*h+h/2.0<<","<<c*i*h+h/2.0<<","<<P[t][i*nx*nz+j*nx+k]<<","<<Vel_mod[i*nx*nz+j*nx+k]<<"\n";
 				}
 			}
 		}
