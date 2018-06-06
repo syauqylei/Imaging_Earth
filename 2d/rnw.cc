@@ -88,42 +88,6 @@ double **read_wve(const std::string& filename, int &nx, int &ny, int &nz, int &n
 	std::cout<<Ufield.size()-6<<"\t \n";
 	return U;
 	}
-	
-void write_vtk(const std::string& filename,double **U,double h,int nt,int nx, int ny,int nz)
-{
-	std::string ext=".vtk";
-	int tprint=float(nt)/10.0;
-	for(int l=0;l<nt;l++)
-	{
-		if(l%tprint==0){std::cout<<"Writing Vtk File ........"<<float(l+1)/nt*100.0<<"% \n";}
-		std::stringstream ss;
-		ss << std::setfill('0') << std::setw(5) << l;
-		std::string fname=filename+ss.str()+ext;
-		std::ofstream file;
-		file.open(fname);
-		file <<"# vtk DataFile Version 2.0"<<std::endl;
-		file <<filename<<std::endl;
-		file <<"ASCII"<<std::endl;
-		file <<"DATASET"<<"\t"<<"STRUCTURED_POINTS"<<std::endl;
-		file <<"DIMENSIONS"<<"\t"<<nx<<"\t"<<ny<<"\t"<<nz<<std::endl;
-		file <<"SPACING"<<"\t"<<h<<"\t"<<h<<"\t"<<h<<std::endl;
-		file <<"ORIGIN"<<"\t"<<"0"<<"\t"<<"0"<<"\t"<<"0"<<std::endl;
-		file <<"POINT_DATA"<<"\t"<<nx*ny*nz<<std::endl;
-		file <<"SCALARS"<<"\t"<<"Wavefield"<<"\t"<<"double"<<"\t"<<"4"<<std::endl;
-		file <<"LOOKUP_TABLE"<<"\t"<<"default"<<std::endl;
-		for (int i=0;i<nz;i++)
-		{
-			for (int j=0;j<ny;j++)
-			{
-				for(int k=0;k<nx;k++)
-				{
-				file <<std::fixed<<std::setprecision(5)<<k*h<<" "<<j*h<<" "<<i*h<<" "<<U[i][i*nx*ny+j*nx+k]<<std::endl;
-				}
-			}
-		}
-		file.close();
-	}
-}
 
 void write_rec(const std::string& filename, double **U,int srcloc, double h,double dt, int nx,int nt){
 	std::ofstream file;
@@ -134,7 +98,7 @@ void write_rec(const std::string& filename, double **U,int srcloc, double h,doub
 	file.open(filename+ss.str()+ext1);
 	for (int i=0;i<nt;i++){
 		for (int j=0;j<nx;j++){
-		file<<std::fixed()<<std::setprecision(5) << U[i][j]<<"\t";
+		file << std::fixed() <<std::setprecision(5) << U[i][j]<<"\t";
 		}
 		std::cout<<"\n";
 	}

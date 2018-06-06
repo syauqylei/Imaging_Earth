@@ -18,7 +18,7 @@ int main(){
 	double **U;
 	for (int i=0;i<1;i++){
 		U=wvenacd(Velocity,nx,ny,srcloc[i],fm,h,dt,T);
-		write_rec("/scratch/syauqy/record/rec",U,srcloc[i],h,dt,nx,nt);
+		write_rec("~/fin_proj_data/record/rec",U,srcloc[i],h,dt,nx,nt);
 		}
 	//w_dat("/scratch/syauqy/data/sample",Velocity,U,dt,h,nt,nx,ny,1,1,-1,1);
 	free_mat_mem(U);
