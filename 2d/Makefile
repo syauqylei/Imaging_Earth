@@ -1,7 +1,7 @@
-CC=/opt/pgi/linux86-64/2017/bin/pgc++
+CC=/opt/pgi/linux86-64/2018/bin/pgc++
 
 all: main.o coeff.o wavesim.o arrayman.o source_function.o hider.o abcon.o rnw.o
-	$(CC) -std=c++11 *.o -o wve_nacd
+	$(CC) -Wall -std=c++11 *.o -pg -o wve_nacd
 
 arrayman.o : arrayman.cc
 	$(CC) -std=c++11 -c arrayman.cc
