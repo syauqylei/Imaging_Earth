@@ -16,8 +16,11 @@ int main(){
 	std::cout<<nx<<" "<<ny<<" "<<nz<<" "<<nt<<" "<<ns<<" "<<dt<<" "<<T<<" "<<h<<" "<<fm<<"\n";
 	double *Velocity=&vel[0];
 	double **U;
-	U=wvenacd(Velocity,nx,ny,nx/2,fm,h,dt,T);
-	w_dat("/scratch/syauqy/data/sample",Velocity,U,dt,h,nt,nx,ny,1,1,-1,1);
+	for (int i=0;i<1;i++){
+		U=wvenacd(Velocity,nx,ny,srcloc[i],fm,h,dt,T);
+		write_rec("record",U,srcloc[i],h,dt,nx,nt);
+		}
+	//w_dat("/scratch/syauqy/data/sample",Velocity,U,dt,h,nt,nx,ny,1,1,-1,1);
 	free_mat_mem(U);
 	}
 
