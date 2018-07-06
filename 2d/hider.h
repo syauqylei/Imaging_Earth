@@ -1,7 +1,5 @@
 #ifndef HIDER
 #define HIDER
-double dx(double *U,int i, int nx,double h);
-double dy(double *U,int i, int nx,double h);
 double d2xd2y(double *U,int i, int nx,double h);
 double d4x(double *U,double *Ux,int i, int nx,double h);
 double d4y(double *U,double *Uy,int i, int nx,double h);
