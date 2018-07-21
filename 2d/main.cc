@@ -16,9 +16,9 @@ int main(){
 	std::cout<<nx<<" "<<ny<<" "<<nz<<" "<<nt<<" "<<ns<<" "<<dt<<" "<<T<<" "<<h<<" "<<fm<<"\n";
 	double *Velocity=&vel[0];
 	double **U;
-	for (int i=0;i<1;i++){
+	for (int i=0;i<ns;i++){
 		U=wvenacd(Velocity,50,50,1250+25,50,20,0.002,5);
-		//write_rec("~/fin_proj_data/record/rec",U,25,50,0.00,50,501);
+		write_rec("~/fin_proj_data/record/rec",U,25,50,0.00,50,501);
 		}
 	w_dat("data/coba",Velocity,U,0.005,20,1001,50,50,1,1,-1,1);
 	free_mat_mem(U);

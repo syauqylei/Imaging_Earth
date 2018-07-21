@@ -1,4 +1,9 @@
 
+double d2xd2y(double *U,int i, int nx,double h){
+	double hd;
+	hd=(U[i+1]+U[i-1]+U[i+nx]+U[i-nx]-4*U[i])/h/h;
+	return hd;
+	}
 double d4x(double *U,double *Ux,int i, int nx,double h){
 	double hd;
 	hd=-12.0/h/h/h/h*(U[i+1]-2.0*U[i]+U[i-1])+(Ux[i+1]-Ux[i-1])*6.0/h/h/h;
