@@ -3,8 +3,8 @@ TIMER=/usr/bin/time
 OPT=-ta:tesla:cc60
 NOPT=-fast -Minfo=opt $(OPT)
 
-all: main.o coeff.o wavesim.o arrayman.o source_function.o hider.o abcon.o rnw.o clean
-	$(CC) -std=c++11 -pg *.o -o wve_nacd $(OPT)
+all: main.o coeff.o wavesim.o arrayman.o source_function.o hider.o abcon.o rnw.o 
+	$(CC) -std=c++11 -pg *.o -o $(OPT) wve_nacd 
 
 exec : wve_nacd
 	$(TIMER) ./wve_nacd
